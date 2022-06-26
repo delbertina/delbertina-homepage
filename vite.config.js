@@ -7,5 +7,5 @@ export default defineConfig({
   build: {
     outDir: './docs'
   },
-  base: 'https://delbertina.github.io/delbertina-homepage/'
+  base: 'https://delbertina.com'
 })
