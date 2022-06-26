@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-/docs/CNAME
+docs/CNAME
 
 # Editor directories and files
 .vscode/*

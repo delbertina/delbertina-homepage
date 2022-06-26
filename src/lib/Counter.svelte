@@ -6,6 +6,7 @@
 </script>
 
 <button on:click={increment}>
+  Click Me Please!
   Clicks: {count}
 </button>
 
