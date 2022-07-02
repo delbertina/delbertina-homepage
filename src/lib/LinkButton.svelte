@@ -1,14 +1,16 @@
 <script>
-  let count = 0
-  const increment = () => {
-    count += 1
-  }
+  import { Router, Route, Link } from "svelte-navigator";
+  export let description
+  export let link
 </script>
 
-<button on:click={increment}>
-  Click Me Please!
-  Clicks: {count}
-</button>
+<Router>
+  <Link to="{link}">
+    <button>
+      {description}
+    </button>
+  </Link>
+</Router>
 
 <style>
   button {
