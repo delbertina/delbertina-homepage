@@ -1,4 +1,5 @@
 <script>
+    import LinkButton from '../lib/LinkButton.svelte';
     import logo from '../assets/face-bust.png';
 </script>
   
@@ -6,6 +7,7 @@
     <img src={logo} alt="delbertina Logo" />
     <h1>Welcome to my website</h1>
     <h3>(Website currently WIP)</h3>
+    <LinkButton description="Home" link="/"/>
     <br>
     <h1>Video Route</h1>
 </main>
