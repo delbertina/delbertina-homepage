@@ -1,12 +1,14 @@
 # delbertina's Homepage
 
 TODO
-- make sure stuff works
-- change to be delbertina.com
 - put all of my projects on display
+- add photography highlights
+- add digital art highlights
 
 
-
+DONE
+- change to be delbertina.com
+- make sure stuff works
 
 # Svelte + Vite
 
