@@ -1,6 +1,10 @@
 <script>
     import LinkButton from '../lib/LinkButton.svelte';
     import logo from '../assets/face-bust.png';
+
+    function handleClick(url) {
+        window.open(url, '_blank').focus();
+    }
 </script>
   
 <main>
@@ -19,7 +23,7 @@
     <LinkButton description="Home" link="/"/>
 </main>
 <div class="content">
-    <div class="card">
+    <div class="card" on:click={() => handleClick("https://delbertina.com")}>
         <h2>delbertina.com</h2>
         <h3>The website you're on right now!</h3>
         <p>
@@ -32,8 +36,8 @@
             Solo :: June 2022
         </div>
     </div>
-    <div class="card">
-        <h2>magnarisa.com</h2>
+    <div class="card" on:click={() => handleClick("https://magnarisa.net")}>
+        <h2>magnarisa.net</h2>
         <h3>A website I made with friends for our internet community.</h3>
         <p>
             This projects was built using Angular 12.
