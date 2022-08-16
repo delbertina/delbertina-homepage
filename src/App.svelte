@@ -8,7 +8,7 @@
   import Home from './routes/home.svelte';
 </script>
 
-<Router>
+<Router url="">
   <Route path="/" component={Home} />
   <Route path="dev" component={Dev} />
   <Route path="photo" component={Photo} />
