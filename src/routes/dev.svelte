@@ -36,11 +36,51 @@
             Solo :: June 2022
         </div>
     </div>
+    <div class="card" on:click={() => handleClick("https://delbertina.github.io/ClipClopCam/")}>
+        <h2>Clip Clop Cam</h2>
+        <h3>Tiktok camera game filters for desktop webcams using WebGL</h3>
+        <p>
+            Uses Angular as a framework to remake camera games from the Tiktok app for desktop.
+            These games are commonly played with friends, but a phone is way too small to see.
+            placeholder placeholder placeholder placeholder placeholder 
+            placeholder placeholder placeholder placeholder placeholder placeholder 
+        </p>
+        <div class="card-footer">
+            Solo :: Feb 2023
+        </div>
+    </div>
+    <div class="card" on:click={() => handleClick("https://github.com/delbertina/PlayerHeadshotGrabber")}>
+        <h2>Player Headshot Grabber</h2>
+        <h3>Python script that uses selenium and pillow to get bust renders of Minecraft skins. </h3>
+        <p>
+            Was used to get thousands of images for a fun yearbook.
+            I picked selenium because I took a class in college that used it and knew it would work for this.
+            The pillow library was used to put a background on the transparent image and crop to size.
+            This program was nessicary because the website that does these renders doesn't have an API for this.
+            I was very pleased at the results and that I didn't have to do this by hand after all.
+        </p>
+        <div class="card-footer">
+            Solo :: Nov 2020
+        </div>
+    </div>
+    <div class="card" on:click={() => handleClick("https://delbertina.github.io/sound-cookies/")}>
+        <h2>Sound Cookies</h2>
+        <h3>React app of sounds that are a little bit more than a bite. </h3>
+        <p>
+            I thought of the idea for this app when looking at old VODs of my friends and I.
+            It's intended to be like a sound board, but from people I know.
+            Currently it's very early in the development and doesn't have every feature I have planned for it.
+            It was a great first project into learning React.
+        </p>
+        <div class="card-footer">
+            Solo :: Feb 2022
+        </div>
+    </div>
     <div class="card" on:click={() => handleClick("https://magnarisa.net")}>
         <h2>magnarisa.net</h2>
         <h3>A website I made with friends for our internet community.</h3>
         <p>
-            This projects was built using Angular 12.
+            This projects was built using Angular 12 and was developed it with mobile devices in mind.
             I picked Angular because at the time a website was very much needed and Angular was the only frontend I knew.
             It was a labor of love over the years that originally started as just a helper site for people to easily visit a list of vote links.
             It morphed into a full-blown website with a dynamic map, and various info pages.
@@ -48,33 +88,30 @@
             As of writing this, this project is currently on the backburner for me personally.
         </p>
         <div class="card-footer">
-            Solo :: July 2018
+            With Friends :: July 2018
         </div>
     </div>
-    <div class="card">
-        <h2>placeholder</h2>
-        <h3>placeholder</h3>
+    <div class="card" on:click={() => handleClick("https://github.com/delbertina/capacitor-plugin-pin-prompt")}>
+        <h2>Capacitor Plugin Pin Prompt</h2>
+        <h3>A capacitor plugin to prompt for Android device credentials and report results</h3>
         <p>
-            placeholder placeholder placeholder placeholder placeholder placeholder 
-            placeholder placeholder placeholder placeholder placeholder placeholder placeholder 
-            placeholder placeholder placeholder placeholder placeholder 
-            placeholder placeholder placeholder placeholder placeholder placeholder 
+            Was made to solve a bug in the existing bug in the capacitor framework.
+            I made this at work to solve a customer's issue. 
         </p>
         <div class="card-footer">
-            Solo :: placeholder 2022
+            Solo :: Jun 2021
         </div>
     </div>
-    <div class="card">
-        <h2>placeholder</h2>
-        <h3>placeholder</h3>
+    <div class="card" on:click={() => handleClick("https://github.com/delbertina/StartPageEmber")}>
+        <h2>Start Page in Ember</h2>
+        <h3>My custom browser start page built with Ember </h3>
         <p>
-            placeholder placeholder placeholder placeholder placeholder placeholder 
-            placeholder placeholder placeholder placeholder placeholder placeholder placeholder 
-            placeholder placeholder placeholder placeholder placeholder 
-            placeholder placeholder placeholder placeholder placeholder placeholder 
+            An intentionally very bland and muted page to match my desktop theme.
+            Helps me navigate quickly to sites that I frequently go to without cluttering up my bookmarks bar.
+            It's better than using the bookmarks bar because it only takes 1 click to go to any one of the 20+ options.
         </p>
         <div class="card-footer">
-            Solo :: placeholder 2022
+            Solo :: June 2022
         </div>
     </div>
 </div>
