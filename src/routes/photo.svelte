@@ -5,9 +5,18 @@
   
 <main>
     <img src={logo} alt="delbertina Logo" />
-    <h1>Welcome to my website</h1>
-    <h3>(Website currently WIP)</h3>
+    <h1>Photography</h1>
     <LinkButton description="Home" link="/"/>
-    <br>
-    <h1>Photo Route</h1>
 </main>
+<div class="content">
+    <div class="card">
+        <h2>picture 1</h2>
+        <h3>subtitle</h3>
+        <p>
+            More information on the image
+        </p>
+        <div class="card-footer">
+            June 2022
+        </div>
+    </div>
+</div>

@@ -12,7 +12,7 @@
   <Route path="/" component={Home} />
   <Route path="dev" component={Dev} />
   <Route path="photo" component={Photo} />
-  <Route path="origami" component={Origami} />
+  <!-- <Route path="origami" component={Origami} /> -->
   <Route path="video" component={Video} />
   <Route path="art" component={Art} />
 </Router>

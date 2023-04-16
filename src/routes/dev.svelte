@@ -9,7 +9,7 @@
   
 <main>
     <img src={logo} alt="delbertina Logo" />
-    <h1>Welcome to my website</h1>
+    <h1>Software Development</h1>
     <h3>
         I've been into computers since I was 5.
         My first computer ran Windows 95 and I got substantial experience troubleshooting problems on that computer before the internet.
@@ -42,11 +42,24 @@
         <p>
             Uses Angular as a framework to remake camera games from the Tiktok app for desktop.
             These games are commonly played with friends, but a phone is way too small to see.
-            placeholder placeholder placeholder placeholder placeholder 
-            placeholder placeholder placeholder placeholder placeholder placeholder 
+            Currently includes a faithful recreation of the popular 'Avoid the Box' game.
+            The goal is to have multiple different games and explore the features of WebGL.
         </p>
         <div class="card-footer">
             Solo :: Feb 2023
+        </div>
+    </div>
+    <div class="card" on:click={() => handleClick("https://delbertina.github.io/sound-cookies/")}>
+        <h2>Sound Cookies</h2>
+        <h3>React app of sounds that are a little bit more than a bite. </h3>
+        <p>
+            I thought of the idea for this app when looking at old VODs of my friends and I.
+            It's intended to be like a sound board, but from people I know.
+            Currently it's nearing all of the goal features I set out have in it.
+            It was a great first project into learning React.
+        </p>
+        <div class="card-footer">
+            Solo :: Feb 2022
         </div>
     </div>
     <div class="card" on:click={() => handleClick("https://github.com/delbertina/PlayerHeadshotGrabber")}>
@@ -61,19 +74,6 @@
         </p>
         <div class="card-footer">
             Solo :: Nov 2020
-        </div>
-    </div>
-    <div class="card" on:click={() => handleClick("https://delbertina.github.io/sound-cookies/")}>
-        <h2>Sound Cookies</h2>
-        <h3>React app of sounds that are a little bit more than a bite. </h3>
-        <p>
-            I thought of the idea for this app when looking at old VODs of my friends and I.
-            It's intended to be like a sound board, but from people I know.
-            Currently it's very early in the development and doesn't have every feature I have planned for it.
-            It was a great first project into learning React.
-        </p>
-        <div class="card-footer">
-            Solo :: Feb 2022
         </div>
     </div>
     <div class="card" on:click={() => handleClick("https://magnarisa.net")}>
@@ -96,7 +96,7 @@
         <h3>A capacitor plugin to prompt for Android device credentials and report results</h3>
         <p>
             Was made to solve a bug in the existing bug in the capacitor framework.
-            I made this at work to solve a customer's issue. 
+            I made this at work to solve an urgent customer issue. 
         </p>
         <div class="card-footer">
             Solo :: Jun 2021

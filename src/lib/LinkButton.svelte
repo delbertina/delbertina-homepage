@@ -5,7 +5,7 @@
 </script>
 
 <Router>
-  <Link to="{link}">
+  <Link to="{link}" tabindex={-1}>
     <button>
       {description}
     </button>
