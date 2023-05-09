@@ -23,6 +23,24 @@ main {
     margin: 1em;
     max-width: 90%;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media only screen and (max-width: 750px) {
+    .card {
+        flex-direction: column;
+    }
+} 
+
+.card-img {
+    padding-right: 16px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
 }
 
 .card-footer {
