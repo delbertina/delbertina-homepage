@@ -38,6 +38,13 @@ main {
     padding-right: 16px;
 }
 
+.card-img-inner {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+    border: white 1px solid;
+}
+
 .card-content {
     display: flex;
     flex-direction: column;

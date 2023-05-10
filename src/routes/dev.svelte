@@ -29,7 +29,7 @@
   <div class="card" on:click={() => handleClick("https://delbertina.com")}>
     <div class="card-img">
       <!-- svelte-ignore a11y-media-has-caption -->
-      <video width="300px" src="https://i.imgur.com/ALzJgy3.mp4" autoplay loop/>
+      <img class="card-img-inner" width="300px" src="https://i.imgur.com/Ty2MCBq.png" alt="homepage of this website"/>
     </div>
     <div class="card-content">
       <h2>delbertina.com</h2>
@@ -49,7 +49,7 @@
   >
     <div class="card-img">
       <!-- svelte-ignore a11y-media-has-caption -->
-      <video width="300px" src="https://i.imgur.com/ALzJgy3.mp4" autoplay loop/>
+      <video width="300px" src="https://i.imgur.com/8A4AwAh.mp4" autoplay loop/>
     </div>
     <div class="card-content">
       <h2>Clip Clop Cam</h2>
@@ -91,7 +91,7 @@
   >
   <div class="card-img">
     <!-- svelte-ignore a11y-media-has-caption -->
-    <video width="300px" src="https://i.imgur.com/ALzJgy3.mp4" autoplay loop/>
+    <img class="card-img-inner" width="300px" src="https://i.imgur.com/77N0AwR.png" alt="Final result used in a yearbook"/>
   </div>
     <div class="card-content">
       <h2>Player Headshot Grabber</h2>
@@ -114,7 +114,7 @@
   <div class="card" on:click={() => handleClick("https://magnarisa.net")}>
     <div class="card-img">
         <!-- svelte-ignore a11y-media-has-caption -->
-        <video width="300px" src="https://i.imgur.com/ALzJgy3.mp4" autoplay loop/>
+        <img class="card-img-inner" width="300px" src="https://i.imgur.com/ouJCatb.png" alt="the magnarisa website homepage"/>
       </div>
     <div class="card-content">
       <h2>magnarisa.net</h2>
@@ -140,7 +140,7 @@
   >
   <div class="card-img">
     <!-- svelte-ignore a11y-media-has-caption -->
-    <video width="300px" src="https://i.imgur.com/ALzJgy3.mp4" autoplay loop/>
+    <img class="card-img-inner" width="300px" src="https://i.imgur.com/sZOkuGE.png" alt="example of android pin prompt"/>
   </div>
     <div class="card-content">
       <h2>Capacitor Plugin Pin Prompt</h2>
@@ -161,7 +161,7 @@
   >
   <div class="card-img">
     <!-- svelte-ignore a11y-media-has-caption -->
-    <video width="300px" src="https://i.imgur.com/ALzJgy3.mp4" autoplay loop/>
+    <img class="card-img-inner" width="300px"  src="https://i.imgur.com/CSn3m0z.png" alt="My custom start page"/>
   </div>
     <div class="card-content">
       <h2>Start Page in Ember</h2>
