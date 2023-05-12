@@ -1,6 +1,10 @@
 <script>
     import LinkButton from '../lib/LinkButton.svelte';
     import logo from '../assets/face-bust.png';
+
+    function handleClick(url) {
+    window.open(url, "_blank").focus();
+  }
 </script>
   
 <main>
@@ -9,18 +13,35 @@
     <LinkButton description="Home" link="/"/>
 </main>
 <div class="content">
-    <div class="card">
+    <div class="card" on:click={() => handleClick("https://imgur.com/a/ARXaZJ5")}>
         <div class="card-img">
-            <img class="card-img-inner" width="300px" src="https://i.imgur.com/rm0u5tC.png" alt=""/>
+            <img class="card-img-inner" width="300px" src="https://i.imgur.com/TdJCncq.jpg" alt="A large bird that reminds me of a quail"/>
           </div>
           <div class="card-content">
-        <h2>picture 1</h2>
-        <h3>subtitle</h3>
+        <h2>Quail & Friends</h2>
+        <h3>Not an actual quail, but it reminds me of one.</h3>
         <p>
-            More information on the image
+            A collection of pictures I took with my cheap camcorder of birds and stuff.
+            These pictures are what made me realize I need a real camera.
         </p>
         <div class="card-footer">
-            June 2022
+            Jan 2021
+        </div>
+          </div>
+    </div>
+    <div class="card" on:click={() => handleClick("https://imgur.com/a/c6Ipsvj")}>
+        <div class="card-img">
+            <img class="card-img-inner" width="300px" src="https://i.imgur.com/x2pXhET.jpg" alt="A ginger tom"/>
+          </div>
+          <div class="card-content">
+        <h2>Tommy the Ginger Tom</h2>
+        <h3>The orangest cat of them all!</h3>
+        <p>
+            A nice neighborhood cat that lets me take his picture and is very cute.
+            Sometimes elusive, but like to explore so you never know where he'll be.
+        </p>
+        <div class="card-footer">
+            April 2021
         </div>
           </div>
     </div>
