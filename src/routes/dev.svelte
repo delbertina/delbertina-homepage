@@ -29,7 +29,12 @@
   <div class="card" on:click={() => handleClick("https://delbertina.com")}>
     <div class="card-img">
       <!-- svelte-ignore a11y-media-has-caption -->
-      <img class="card-img-inner" width="300px" src="https://i.imgur.com/Ty2MCBq.png" alt="homepage of this website"/>
+      <img
+        class="card-img-inner"
+        width="300px"
+        src="https://i.imgur.com/Ty2MCBq.png"
+        alt="homepage of this website"
+      />
     </div>
     <div class="card-content">
       <h2>delbertina.com</h2>
@@ -45,11 +50,47 @@
   </div>
   <div
     class="card"
+    on:click={() => handleClick("https://github.com/delbertina/MultiTimerApp")}
+  >
+    <div class="card-img">
+      <!-- svelte-ignore a11y-media-has-caption -->
+      <img
+        class="card-img-inner"
+        width="300px"
+        src="https://i.imgur.com/AD4FnwQ.png"
+        alt="In-app images"
+      />
+    </div>
+    <div class="card-content">
+      <h2>Multi Timer App</h2>
+      <h3>
+        Android application build using Ionic React that can track multiple
+        timers.
+      </h3>
+      <p>
+        Uses the Ionic framework with React to build a mobile application for
+        Android devices. Allows the user to interact with multiple timers and
+        modify the time on the fly with quick actions. Was developed for used
+        with a game played with multiple teams where items in the game add or
+        subtract from the time they're allowed to play the game. The app is
+        currently pending approval to be listed on the Google Play Store for
+        availibility to Android devices world-wide!
+      </p>
+      <div class="card-footer">Solo :: Dec 2023</div>
+    </div>
+  </div>
+  <div
+    class="card"
     on:click={() => handleClick("https://delbertina.github.io/ClipClopCam/")}
   >
     <div class="card-img">
       <!-- svelte-ignore a11y-media-has-caption -->
-      <video width="300px" src="https://i.imgur.com/8A4AwAh.mp4" autoplay loop/>
+      <video
+        width="300px"
+        src="https://i.imgur.com/8A4AwAh.mp4"
+        autoplay
+        loop
+      />
     </div>
     <div class="card-content">
       <h2>Clip Clop Cam</h2>
@@ -68,10 +109,15 @@
     class="card"
     on:click={() => handleClick("https://delbertina.github.io/sound-cookies/")}
   >
-  <div class="card-img">
-    <!-- svelte-ignore a11y-media-has-caption -->
-    <video width="300px" src="https://i.imgur.com/ALzJgy3.mp4" autoplay loop/>
-  </div>
+    <div class="card-img">
+      <!-- svelte-ignore a11y-media-has-caption -->
+      <video
+        width="300px"
+        src="https://i.imgur.com/ALzJgy3.mp4"
+        autoplay
+        loop
+      />
+    </div>
     <div class="card-content">
       <h2>Sound Cookies</h2>
       <h3>React app of sounds that are a little bit more than a bite.</h3>
@@ -89,10 +135,15 @@
     on:click={() =>
       handleClick("https://github.com/delbertina/PlayerHeadshotGrabber")}
   >
-  <div class="card-img">
-    <!-- svelte-ignore a11y-media-has-caption -->
-    <img class="card-img-inner" width="300px" src="https://i.imgur.com/77N0AwR.png" alt="Final result used in a yearbook"/>
-  </div>
+    <div class="card-img">
+      <!-- svelte-ignore a11y-media-has-caption -->
+      <img
+        class="card-img-inner"
+        width="300px"
+        src="https://i.imgur.com/77N0AwR.png"
+        alt="Final result used in a yearbook"
+      />
+    </div>
     <div class="card-content">
       <h2>Player Headshot Grabber</h2>
       <h3>
@@ -113,9 +164,14 @@
   </div>
   <div class="card" on:click={() => handleClick("https://magnarisa.net")}>
     <div class="card-img">
-        <!-- svelte-ignore a11y-media-has-caption -->
-        <img class="card-img-inner" width="300px" src="https://i.imgur.com/ouJCatb.png" alt="the magnarisa website homepage"/>
-      </div>
+      <!-- svelte-ignore a11y-media-has-caption -->
+      <img
+        class="card-img-inner"
+        width="300px"
+        src="https://i.imgur.com/ouJCatb.png"
+        alt="the magnarisa website homepage"
+      />
+    </div>
     <div class="card-content">
       <h2>magnarisa.net</h2>
       <h3>A website I made with friends for our internet community.</h3>
@@ -138,10 +194,15 @@
     on:click={() =>
       handleClick("https://github.com/delbertina/capacitor-plugin-pin-prompt")}
   >
-  <div class="card-img">
-    <!-- svelte-ignore a11y-media-has-caption -->
-    <img class="card-img-inner" width="300px" src="https://i.imgur.com/sZOkuGE.png" alt="example of android pin prompt"/>
-  </div>
+    <div class="card-img">
+      <!-- svelte-ignore a11y-media-has-caption -->
+      <img
+        class="card-img-inner"
+        width="300px"
+        src="https://i.imgur.com/sZOkuGE.png"
+        alt="example of android pin prompt"
+      />
+    </div>
     <div class="card-content">
       <h2>Capacitor Plugin Pin Prompt</h2>
       <h3>
@@ -159,10 +220,15 @@
     class="card"
     on:click={() => handleClick("https://github.com/delbertina/StartPageEmber")}
   >
-  <div class="card-img">
-    <!-- svelte-ignore a11y-media-has-caption -->
-    <img class="card-img-inner" width="300px"  src="https://i.imgur.com/CSn3m0z.png" alt="My custom start page"/>
-  </div>
+    <div class="card-img">
+      <!-- svelte-ignore a11y-media-has-caption -->
+      <img
+        class="card-img-inner"
+        width="300px"
+        src="https://i.imgur.com/CSn3m0z.png"
+        alt="My custom start page"
+      />
+    </div>
     <div class="card-content">
       <h2>Start Page in Ember</h2>
       <h3>My custom browser start page built with Ember</h3>
