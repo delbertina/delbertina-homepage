@@ -26,28 +26,6 @@
   <LinkButton description="Home" link="/" />
 </main>
 <div class="content">
-  <div class="card" on:click={() => handleClick("https://delbertina.com")}>
-    <div class="card-img">
-      <!-- svelte-ignore a11y-media-has-caption -->
-      <img
-        class="card-img-inner"
-        width="300px"
-        src="https://i.imgur.com/Ty2MCBq.png"
-        alt="homepage of this website"
-      />
-    </div>
-    <div class="card-content">
-      <h2>delbertina.com</h2>
-      <h3>The website you're on right now!</h3>
-      <p>
-        This project was built using svelte. I picked svelte after researching
-        different popular frameworks. It's new and generally seems to be
-        well-loved. That's how react started out and now it's more popular than
-        the old hats of Angular & Vue.
-      </p>
-      <div class="card-footer">Solo :: June 2022</div>
-    </div>
-  </div>
   <div
     class="card"
     on:click={() => handleClick("https://github.com/delbertina/MultiTimerApp")}
@@ -81,6 +59,36 @@
   </div>
   <div
     class="card"
+    on:click={() => handleClick("https://delbertina.github.io/FlipCardGrid/")}
+  >
+    <div class="card-img">
+      <!-- svelte-ignore a11y-media-has-caption -->
+      <img
+        class="card-img-inner"
+        width="300px"
+        src="https://i.imgur.com/p2CYuCE.png"
+        alt="In-app images"
+      />
+    </div>
+    <div class="card-content">
+      <h2>Flip Card Grid</h2>
+      <h3>
+        A grid of cards that flip around made with React. For use with my
+        version of the GMM flavor matching game.
+      </h3>
+      <p>
+        Two teams take turns tasting a dish of an unknown flavor and uses that
+        info as well as previous answers to guess the correct flavor and the
+        correct location of that flavor on the board. Each team can earn 1 point
+        for guessing the correct flavor and 1 point for guessing the correct
+        location. The plan is to add more pages with different uses for the
+        reusable components. Made with the react-transition-group library.
+      </p>
+      <div class="card-footer">Solo :: Nov 2023</div>
+    </div>
+  </div>
+  <div
+    class="card"
     on:click={() => handleClick("https://delbertina.github.io/ClipClopCam/")}
   >
     <div class="card-img">
@@ -103,6 +111,29 @@
         games and explore the features of WebGL.
       </p>
       <div class="card-footer">Solo :: Feb 2023</div>
+    </div>
+  </div>
+
+  <div class="card" on:click={() => handleClick("https://delbertina.com")}>
+    <div class="card-img">
+      <!-- svelte-ignore a11y-media-has-caption -->
+      <img
+        class="card-img-inner"
+        width="300px"
+        src="https://i.imgur.com/Ty2MCBq.png"
+        alt="homepage of this website"
+      />
+    </div>
+    <div class="card-content">
+      <h2>delbertina.com</h2>
+      <h3>The website you're on right now!</h3>
+      <p>
+        This project was built using svelte. I picked svelte after researching
+        different popular frameworks. It's new and generally seems to be
+        well-loved. That's how react started out and now it's more popular than
+        the old hats of Angular & Vue.
+      </p>
+      <div class="card-footer">Solo :: June 2022</div>
     </div>
   </div>
   <div
