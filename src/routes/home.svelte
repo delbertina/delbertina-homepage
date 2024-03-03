@@ -7,7 +7,6 @@
     <img src={logo} alt="delbertina Logo" />
     <h1>Welcome to my website</h1>
     <h3>Use the links below to learn more about my marketable skills.</h3>
-    <h3>Testing build</h3>
 
     <div class="link-button-row">
     <LinkButton description="Developer" link="/dev"/>
