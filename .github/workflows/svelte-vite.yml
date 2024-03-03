@@ -46,7 +46,7 @@ jobs:
       # 👇 Store the dist folder
       - uses: actions/upload-pages-artifact@v3
         with:
-          name: app-build
+          name: github-pages
           path: docs
 
   # Deployment job
