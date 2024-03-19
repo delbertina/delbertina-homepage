@@ -9,10 +9,12 @@ main {
     text-align: center;
     padding: 1em;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content {
-    width: 100%;
     margin: 2em;
 }
 
@@ -92,3 +94,26 @@ h3 {
         max-width: none;
     }
 }
+
+.styled-small-button {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.5em 1em;
+    margin: 1em;
+    color: #ff3e00;
+    background-color: rgba(255, 62, 0, 0.1);
+    border-radius: 1em;
+    border: 1px solid rgba(255, 62, 0, 0);
+    outline: none;
+    min-width: 100px;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+  }
+
+  .styled-small-button:focus {
+    border: 1px solid #ff3e00;
+  }
+
+  .styled-small-button:active {
+    background-color: rgba(255, 62, 0, 0.2);
+  }

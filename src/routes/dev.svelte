@@ -2,6 +2,14 @@
   import LinkButton from "../lib/LinkButton.svelte";
   import logo from "../assets/face-bust.png";
 
+  let headerSummaryExpanded = false;
+  const headerSummaryText =
+    "I've been into computers since I was 5. My first computer ran Windows 95 and I got substantial experience troubleshooting problems on that computer before the internet. I've been techy from a young age both learning how to fix physical electronics and having fun with inspect element on websites. My first real program was written in my HS digital electronics class. That class was manufacturing and automation focused so we wrote programs in BASIC for simple robots, C programs for VEX robots, and G-Code for CNC machines. After getting my toes wet in that class I decided to switch my major to programming. Since then I've been making fun programming projects both solo and with my friends. I like all of my projects for different reasons, but below is a highlights list.";
+
+  function toggleHeaderSummaryExpand() {
+    headerSummaryExpanded = !headerSummaryExpanded;
+  }
+
   function handleClick(url) {
     window.open(url, "_blank").focus();
   }
@@ -11,18 +19,18 @@
   <img src={logo} alt="delbertina Logo" />
   <h1>Software Development</h1>
   <h3>
-    I've been into computers since I was 5. My first computer ran Windows 95 and
-    I got substantial experience troubleshooting problems on that computer
-    before the internet. I've been techy from a young age both learning how to
-    fix physical electronics and having fun with inspect element on websites. My
-    first real program was written in my HS digital electronics class. That
-    class was manufacturing and automation focused so we wrote programs in BASIC
-    for simple robots, C programs for VEX robots, and G-Code for CNC machines.
-    After getting my toes wet in that class I decided to switch my major to
-    programming. Since then I've been making fun programming projects both solo
-    and with my friends. I like all of my projects for different reasons, but
-    below is a highlights list.
+    {headerSummaryText.length > 250 && !headerSummaryExpanded
+      ? headerSummaryText.slice(0, 249) + "..."
+      : headerSummaryText}
   </h3>
+  {#if headerSummaryText.length > 250}
+    <button
+      class="styled-small-button closer-header-expand-button"
+      on:click={() => toggleHeaderSummaryExpand()}
+    >
+      {headerSummaryExpanded ? "Show Less" : "Show More"}
+    </button>
+  {/if}
   <LinkButton description="Home" link="/" />
 </main>
 <div class="content">
@@ -273,3 +281,9 @@
     </div>
   </div>
 </div>
+
+<style>
+  .closer-header-expand-button {
+    margin-top: -16px;
+  }
+</style>
