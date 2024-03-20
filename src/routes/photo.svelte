@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
     import LinkIconButton from '../lib/LinkIconButton.svelte';
 
-    function handleClick(url) {
+    function handleClick(url: string): void {
     window.open(url, "_blank").focus();
   }
 </script>

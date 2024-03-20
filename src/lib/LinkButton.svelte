@@ -1,7 +1,7 @@
-<script>
-  import { Router, Link } from "svelte-navigator";
-  export let description
-  export let link
+<script lang="ts">
+  import { Router, Link } from "svelte-routing";
+  export let description: string;
+  export let link: string;
 </script>
 
 <Router>

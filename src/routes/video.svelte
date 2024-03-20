@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import LinkIconButton from "../lib/LinkIconButton.svelte";
 </script>
 

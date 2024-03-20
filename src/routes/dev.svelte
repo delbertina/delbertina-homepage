@@ -1,15 +1,16 @@
-<script>
+<script lang="ts">
   import LinkIconButton from "../lib/LinkIconButton.svelte";
 
   let headerSummaryExpanded = false;
   const headerSummaryText =
     "I've been into computers since I was 5. My first computer ran Windows 95 and I got substantial experience troubleshooting problems on that computer before the internet. I've been techy from a young age both learning how to fix physical electronics and having fun with inspect element on websites. My first real program was written in my HS digital electronics class. That class was manufacturing and automation focused so we wrote programs in BASIC for simple robots, C programs for VEX robots, and G-Code for CNC machines. After getting my toes wet in that class I decided to switch my major to programming. Since then I've been making fun programming projects both solo and with my friends. I like all of my projects for different reasons, but below is a highlights list.";
 
-  function toggleHeaderSummaryExpand() {
+  function toggleHeaderSummaryExpand(): void {
+    // TODO: Add some way to ease in and out of this state
     headerSummaryExpanded = !headerSummaryExpanded;
   }
 
-  function handleClick(url) {
+  function handleClick(url: string): void {
     window.open(url, "_blank").focus();
   }
 </script>

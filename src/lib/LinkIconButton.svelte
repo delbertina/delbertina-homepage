@@ -1,7 +1,7 @@
-<script>
-    import { Router, Link } from "svelte-navigator";
+<script lang="ts">
+    import { Router, Link } from "svelte-routing";
     import logo from "../assets/face-bust.png";
-    export let link
+    export let link: string;
   </script>
   
   <Router>
