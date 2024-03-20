@@ -1,6 +1,5 @@
 <script>
-  import LinkButton from "../lib/LinkButton.svelte";
-  import logo from "../assets/face-bust.png";
+  import LinkIconButton from "../lib/LinkIconButton.svelte";
 
   let headerSummaryExpanded = false;
   const headerSummaryText =
@@ -16,7 +15,7 @@
 </script>
 
 <main>
-  <img src={logo} alt="delbertina Logo" />
+  <LinkIconButton link="/" />
   <h1>Software Development</h1>
   <h3>
     {headerSummaryText.length > 250 && !headerSummaryExpanded
@@ -31,7 +30,6 @@
       {headerSummaryExpanded ? "Show Less" : "Show More"}
     </button>
   {/if}
-  <LinkButton description="Home" link="/" />
 </main>
 <div class="content">
   <div

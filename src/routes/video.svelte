@@ -1,12 +1,10 @@
 <script>
-  import LinkButton from "../lib/LinkButton.svelte";
-  import logo from "../assets/face-bust.png";
+  import LinkIconButton from "../lib/LinkIconButton.svelte";
 </script>
 
 <main>
-  <img src={logo} alt="delbertina Logo" />
+  <LinkIconButton link="/" />
   <h1>Video Editing</h1>
-  <LinkButton description="Home" link="/" />
 </main>
 <div class="content">
   <div

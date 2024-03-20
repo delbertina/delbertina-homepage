@@ -1,6 +1,5 @@
 <script>
-  import LinkButton from "../lib/LinkButton.svelte";
-  import logo from "../assets/face-bust.png";
+  import LinkIconButton from "../lib/LinkIconButton.svelte";
 
   function handleClick(url) {
     window.open(url, "_blank").focus();
@@ -8,9 +7,8 @@
 </script>
 
 <main>
-  <img src={logo} alt="delbertina Logo" />
+  <LinkIconButton link="/" />
   <h1>Digital Artist</h1>
-  <LinkButton description="Home" link="/" />
 </main>
 <div class="content">
   <div

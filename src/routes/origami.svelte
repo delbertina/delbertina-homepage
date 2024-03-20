@@ -1,13 +1,11 @@
 <script>
-    import LinkButton from '../lib/LinkButton.svelte';
-    import logo from '../assets/face-bust.png';
+    import LinkIconButton from '../lib/LinkIconButton.svelte';
 </script>
   
 <main>
-    <img src={logo} alt="delbertina Logo" />
+    <LinkIconButton link="/" />
     <h1>Welcome to my website</h1>
     <h3>(Website currently WIP)</h3>
-    <LinkButton description="Home" link="/"/>
     <br>
     <h1>Origami Route</h1>
 </main>
