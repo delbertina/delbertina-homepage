@@ -1,5 +1,8 @@
 <script lang="ts">
   import LinkIconButton from "../lib/LinkIconButton.svelte";
+  import LinkImgButton from "../lib/LinkImgButton.svelte";
+  // @ts-ignore
+  import GoMarkGithub from "svelte-icons/go/GoMarkGithub.svelte";
 
   let headerSummaryExpanded = false;
   const headerSummaryText =
@@ -11,12 +14,12 @@
   }
 
   function handleClick(url: string): void {
-    window.open(url, "_blank").focus();
+    window.open(url, "_blank")?.focus();
   }
 </script>
 
 <main>
-  <LinkIconButton link="/" />
+  <LinkImgButton link="/" />
   <h1>Software Development</h1>
   <h3>
     {headerSummaryText.length > 250 && !headerSummaryExpanded
@@ -31,6 +34,9 @@
       {headerSummaryExpanded ? "Show Less" : "Show More"}
     </button>
   {/if}
+  <LinkIconButton link="https://github.com/delbertina">
+    <GoMarkGithub slot="icon" />
+  </LinkIconButton>
 </main>
 <div class="content">
   <div

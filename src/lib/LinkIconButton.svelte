@@ -1,11 +1,37 @@
 <script lang="ts">
-    import { Router, Link } from "svelte-routing";
-    import logo from "../assets/face-bust.png";
-    export let link: string;
-  </script>
-  
-  <Router>
-    <Link to="{link}" tabindex={-1}>
-        <img src={logo} alt="delbertina Logo" />
-    </Link>
-  </Router>
+  export let link: string;
+
+  function handleClick(url: string): void {
+    window.open(url, "_blank")?.focus();
+  }
+</script>
+
+<button on:click={() => handleClick(link)}>
+  <slot name="icon" />
+</button>
+
+<style>
+  button {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1em 1em;
+    color: #ff3e00;
+    background-color: rgba(255, 62, 0, 0.1);
+    border-radius: 2em;
+    border: 2px solid rgba(255, 62, 0, 0);
+    outline: none;
+    max-width: 100px;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+  }
+
+  button:focus {
+    border: 2px solid #ff3e00;
+  }
+
+  button:active {
+    background-color: rgba(255, 62, 0, 0.2);
+  }
+</style>

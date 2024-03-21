@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LinkIconButton from "../lib/LinkIconButton.svelte";
+  import LinkIconButton from "../lib/LinkImgButton.svelte";
 </script>
 
 <main>
