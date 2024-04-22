@@ -308,6 +308,34 @@
       </div>
     </div>
   </a>
+  <a
+    class="card-anchor"
+    target="_blank"
+    href="https://github.com/delbertina/delario"
+  >
+    <div class="card">
+      <div class="card-img">
+        <!-- svelte-ignore a11y-media-has-caption -->
+        <img
+          class="card-img-inner"
+          width="300px"
+          src="https://i.imgur.com/1o9rd7z.gif"
+          alt="My version of Agar.io"
+        />
+      </div>
+      <div class="card-content">
+        <h2>delario</h2>
+        <h3>My own personal version of the popular Agar.io game</h3>
+        <p>
+          A simple JavaFX game made for my Advanced Java class in college.
+          I greatly enjoyed making this project and kept adding to it for a while.
+          This project was made before I had much experience so it's not a good representation
+          of my current skills but it is an example of a time when I had to quickly learn a substantal library.      
+        </p>
+        <div class="card-footer">Solo :: Oct 2017</div>
+      </div>
+    </div>
+  </a>
 </div>
 
 <style>
