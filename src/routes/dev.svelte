@@ -311,6 +311,31 @@
   <a
     class="card-anchor"
     target="_blank"
+    href="https://github.com/delbertina/MultiLauncher"
+  >
+    <div class="card">
+      <div class="card-img">
+        <!-- svelte-ignore a11y-media-has-caption -->
+        <img
+          class="card-img-inner"
+          width="300px"
+          src="https://i.imgur.com/5sYGRpx.png"
+          alt="MultiLauncher for Windows"
+        />
+      </div>
+      <div class="card-content">
+        <h2>MultiLauncher</h2>
+        <h3>Speed dial for windows applications</h3>
+        <p>
+          Created to be setup as an auto-run script on startup to pick which programs to quickly open up instead of setting all programs to open on startup.
+        </p>
+        <div class="card-footer">Solo :: Jun 2019</div>
+      </div>
+    </div>
+  </a>
+  <a
+    class="card-anchor"
+    target="_blank"
     href="https://github.com/delbertina/delario"
   >
     <div class="card">
