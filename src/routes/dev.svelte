@@ -21,9 +21,9 @@
 </script>
 
 <main>
-  <LinkImgButton link="/" />
-  <h1>Software Development</h1>
-  <h3>
+  <LinkImgButton link="/" title="Back to home page" />
+  <h1 class="unselectable">Software Development</h1>
+  <h3 class="unselectable">
     {headerSummaryText.length > 250 && !headerSummaryExpanded
       ? headerSummaryText.slice(0, 249) + "..."
       : headerSummaryText}
@@ -36,7 +36,7 @@
       {headerSummaryExpanded ? "Show Less" : "Show More"}
     </button>
   {/if}
-  <LinkIconButton link="https://github.com/delbertina">
+  <LinkIconButton link="https://github.com/delbertina" title="My Github account">
     <GoMarkGithub slot="icon" />
   </LinkIconButton>
 </main>

@@ -5,8 +5,8 @@
 </script>
 
 <main>
-  <LinkIconButton link="/" />
-  <h1>Photography</h1>
+  <LinkIconButton link="/" title="Back to home page" />
+  <h1 class="unselectable">Photography</h1>
 </main>
 <div class="content">
   {#each PHOTO_DATA as item}

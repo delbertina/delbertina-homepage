@@ -30,8 +30,8 @@ main {
 }
 
 .card-img {
-    padding-right: 16px;
-  }
+  padding-right: 16px;
+}
 
 @media only screen and (max-width: 750px) {
   .card {
@@ -125,4 +125,12 @@ h3 {
 
 .styled-small-button:active {
   background-color: rgba(255, 62, 0, 0.2);
+}
+
+/* Make text unselectable */
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }

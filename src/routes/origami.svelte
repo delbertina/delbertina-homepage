@@ -3,7 +3,7 @@
 </script>
   
 <main>
-    <LinkIconButton link="/" />
+    <LinkIconButton link="/" title="Back to home page" />
     <h1>Welcome to my website</h1>
     <h3>(Website currently WIP)</h3>
     <br>

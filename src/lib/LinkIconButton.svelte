@@ -1,12 +1,13 @@
 <script lang="ts">
   export let link: string;
+  export let title: string;
 
   function handleClick(url: string): void {
     window.open(url, "_blank")?.focus();
   }
 </script>
 
-<button on:click={() => handleClick(link)}>
+<button on:click={() => handleClick(link)} title={title}>
   <slot name="icon" />
 </button>
 

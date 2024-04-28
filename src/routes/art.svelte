@@ -9,8 +9,8 @@ import LinkIconButton from "../lib/LinkImgButton.svelte";
 </script>
 
 <main>
-  <LinkIconButton link="/" />
-  <h1>Digital Artist</h1>
+  <LinkIconButton link="/" title="Back to home page"/>
+  <h1 class="unselectable">Digital Artist</h1>
 </main>
 <div class="content">
   {#each ART_DATA as item}
