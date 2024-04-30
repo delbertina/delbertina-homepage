@@ -92,6 +92,15 @@ export const DEV_DATA: ImgCardItem[] = [
       cardLink: "https://github.com/delbertina/MultiLauncher"
     },
     {
+      title: "CardSuite",
+      subtitle: "Card game suite using JavaFX ",
+      description: "Originally part of a game suite for a school project, but with asperiations expanding into suite of only card games. The logic may be a little flawed as a result of having to simplify the game, but the gist of it is still correct.",
+      footer: "Solo :: Nov 2017",
+      imgLink: "https://i.imgur.com/ZyJ911I.png",
+      imgAlt: "Blackjack win senario",
+      cardLink: "https://github.com/delbertina/CardSuite"
+    },
+    {
       title: "delario",
       subtitle: "My own personal version of the popular Agar.io game",
       description: "A simple JavaFX game made for an Advanced Java class in college. Kept adding to it for a while after. Made before the creator had much experience.",
