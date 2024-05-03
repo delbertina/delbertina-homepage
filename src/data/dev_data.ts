@@ -92,6 +92,15 @@ export const DEV_DATA: ImgCardItem[] = [
       cardLink: "https://github.com/delbertina/MultiLauncher"
     },
     {
+      title: "RisaPages",
+      subtitle: "Precursor to magnarisa.net",
+      description: "Made with vanilla HTML, CSS & Javascript with Bootstrap. Was built before I was privy to modern frontend frameworks. Experimented with different color schemes based on URL parameters.",
+      footer: "Solo :: July 2018",
+      imgLink: "https://i.imgur.com/crYvJI4.png",
+      imgAlt: "Home page in default colors",
+      cardLink: "https://github.com/delbertina/RisaPages"
+    },
+    {
       title: "CardSuite",
       subtitle: "Card game suite using JavaFX ",
       description: "Originally part of a game suite for a school project, but with asperiations expanding into suite of only card games. The logic may be a little flawed as a result of having to simplify the game, but the gist of it is still correct.",
