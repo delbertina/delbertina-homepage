@@ -19,7 +19,7 @@ export const DEV_DATA: ImgCardData[] = [
       imgLink: "https://i.imgur.com/p2CYuCE.png",
       imgAlt: "In-app images",
       cardLink: "https://delbertina.github.io/FlipCardGrid/",
-      tags: []
+      tags: ["React", "Game", "Mobile", "MUI"]
     },
     {
       title: "Clip Clop Cam",
