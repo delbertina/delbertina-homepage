@@ -1,16 +1,6 @@
-<script lang="ts" context="module">
-  export type ImgCardItem = {
-    title: string;
-    subtitle: string;
-    description: string;
-    footer: string;
-    cardLink: string;
-    imgLink: string;
-    imgAlt: string;
-  };
-</script>
-
 <script lang="ts">
+  import type { ImgCardItem } from "../types/card-data.js";
+
   export let cardItem: ImgCardItem;
 </script>
 

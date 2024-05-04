@@ -5,6 +5,7 @@
   // @ts-ignore
   import GoMarkGithub from "svelte-icons/go/GoMarkGithub.svelte";
   import { DEV_DATA } from "../data/dev_data.js";
+  import { ImgCardItem } from "../types/card-data.js";
 
   let headerSummaryExpanded = false;
   const headerSummaryText =
@@ -42,7 +43,7 @@
 </main>
 <div class="content">
   {#each DEV_DATA as item}
-    <ImgCard cardItem={item} />
+    <ImgCard cardItem={new ImgCardItem(item)} />
   {/each}
 </div>
 
