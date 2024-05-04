@@ -6,6 +6,7 @@ export class ImgCardItem {
   cardLink: string;
   imgLink: string;
   imgAlt: string;
+  tags: Array<string>;
 
   public constructor(data: ImgCardData) {
     this.title = data.title;
@@ -18,6 +19,7 @@ export class ImgCardItem {
     this.cardLink = data.cardLink;
     this.imgLink = data.imgLink;
     this.imgAlt = data.imgAlt;
+    this.tags = [...data.tags];
   }
 }
 
@@ -29,4 +31,5 @@ export interface ImgCardData {
   cardLink: string;
   imgLink: string;
   imgAlt: string;
+  tags: Array<string>;
 }
