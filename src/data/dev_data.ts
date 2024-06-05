@@ -1,6 +1,16 @@
 import type { ImgCardData } from "../types/card-data.js";
 
 export const DEV_DATA: ImgCardData[] = [
+  {
+    title: "A Blinking Cursor",
+    subtitle: "Idle clicker game inspired by A Dark Room",
+    description: "Originally created in June 2019 to get up to speed in Vue before joining a startup. Uses Pinia for state management and was built with a focus on learning more about state management and modern development with Vue.",
+    projectDate: new Date("2024-05"),
+    imgLink: "https://i.imgur.com/so63wM8.png",
+    imgAlt: "In-app image of main game page",
+    cardLink: "https://delbertina.github.io/ABlinkingCursor/",
+    tags: ["Vue", "Bootstrap", "Pinia", "Game"]
+  },
     {
       title: "Multi Timer App",
       subtitle: "Android application build using Ionic React that can track multiple timers.",
