@@ -25,6 +25,18 @@ export const DEV_DATA: ImgCardData[] = [
     tags: ["React", "MUI", ".NET", "SQLite"],
   },
   {
+    title: "FishAreFriends",
+    subtitle:
+      "Fish pet simulator inspired by classic 90's web browsing and tamagotchi.",
+    description:
+      "Fish pet simulator inspired by classic 90's web browsing and tamagotchi. Built with Next.js with an emphasis on CSS animation. Created as part of an app jam with friends.",
+    projectDate: new Date("2024-02"),
+    imgLink: "https://i.imgur.com/uQuGWJi.png",
+    imgAlt: "All actions unlocked and playing with fish",
+    cardLink: "https://delbertina.github.io/FishAreFriends/",
+    tags: ["Next.js", "React", "Game"],
+  },
+  {
     title: "Multi Timer App",
     subtitle:
       "Android application build using Ionic React that can track multiple timers.",
