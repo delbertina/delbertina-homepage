@@ -25,7 +25,7 @@ export const DEV_DATA: ImgCardData[] = [
     tags: ["React", "MUI", ".NET", "SQLite"],
   },
   {
-    title: "FishAreFriends",
+    title: "Fish Are Friends",
     subtitle:
       "Fish pet simulator inspired by classic 90's web browsing and tamagotchi.",
     description:
