@@ -2,6 +2,16 @@ import type { ImgCardData } from "../types/card-data.js";
 
 export const DEV_DATA: ImgCardData[] = [
   {
+    title: "Blissful Book Bin",
+    subtitle: "Book cataloging app with React",
+    description: "The user can CRUD books, tags, and categories with notifications that the actions were successful or not. Utilizes the Faker API to explore 'new books' and add to your list. Stores data to local storage of the browser.",
+    projectDate: new Date("2024-06"),
+    imgLink: "https://i.imgur.com/I9WCizO.png",
+    imgAlt: "Editing the information for a book",
+    cardLink: "https://delbertina.github.io/BlissfulBookBin/",
+    tags: ["React", "MUI"]
+  },
+  {
     title: "A Blinking Cursor",
     subtitle: "Idle clicker game inspired by A Dark Room",
     description:
