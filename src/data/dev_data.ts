@@ -12,6 +12,16 @@ export const DEV_DATA: ImgCardData[] = [
     tags: ["React", "MUI"]
   },
   {
+    title: "Adept Quiz Wizard",
+    subtitle: "Quiz CRUD application in React",
+    description: "The user can CRUD quizzes and then take the quizzes for a recorded score.",
+    projectDate: new Date("2024-05"),
+    imgLink: "https://i.imgur.com/XJW7SeJ.png",
+    imgAlt: "Editing an existing quiz",
+    cardLink: "https://delbertina.github.io/AdeptQuizWizard/",
+    tags: ["React", "MUI"]
+  },
+  {
     title: "A Blinking Cursor",
     subtitle: "Idle clicker game inspired by A Dark Room",
     description:
