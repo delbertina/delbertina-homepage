@@ -79,6 +79,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-self: stretch;
 }
 
 .card-content > h2 {
@@ -97,6 +98,7 @@
 
 .card-content > p {
   margin-top: 8px;
+  flex-grow: 1;
 }
 
 .card-footer {
