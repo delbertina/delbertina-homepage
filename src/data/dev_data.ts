@@ -57,6 +57,16 @@ export const DEV_DATA: ImgCardData[] = [
     tags: ["Next.js", "React", "Game"],
   },
   {
+    title: "Helpful Audio Chopper",
+    subtitle: "Python application to split up an audio file and name the parts",
+    description: "Originally made to split up YouTube video audio of 500+ sound effects, but built with reusability in mind.",
+    projectDate: new Date("2024-01"),
+    imgLink: "https://i.imgur.com/xt8TfZq.png",
+    imgAlt: "Chunks found from audio file",
+    cardLink: "https://github.com/delbertina/HelpfulAudioChopper",
+    tags: ["Python"]
+  },
+  {
     title: "Multi Timer App",
     subtitle:
       "Android application build using Ionic React that can track multiple timers.",
