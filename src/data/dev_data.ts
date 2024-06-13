@@ -213,4 +213,14 @@ export const DEV_DATA: ImgCardData[] = [
     cardLink: "https://github.com/delbertina/delario",
     tags: ["Java", "JavaFX", "Game"],
   },
+  {
+    title: "Talented Typing Turtle",
+    subtitle: "Script to print text using the turtle library",
+    description: "Built in down time during Python class in college. I essentially finished the coursework in the first couple weeks so I had a lot of time to explore various cool libraries.",
+    projectDate: new Date("2016-09"),
+    imgLink: "https://i.imgur.com/4SJKqnD.png",
+    imgAlt: "The output of talented displayed on the canvas",
+    cardLink: "https://github.com/delbertina/TalentedTypingTurtle",
+    tags: ["Python", "Turtle"]
+  }
 ];
