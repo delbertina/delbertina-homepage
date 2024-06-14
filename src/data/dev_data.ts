@@ -102,6 +102,16 @@ export const DEV_DATA: ImgCardData[] = [
     tags: ["Angular", "Game", "Desktop", "Camera"],
   },
   {
+    title: "D3 Showcase",
+    subtitle: "A simple Ionic React app showcasing the D3 library ",
+    description: "A collection of proof of concepts for D3 graphs in Ionic React. Originally created to learn D3 for a professional project.",
+    projectDate: new Date("2022-07"),
+    imgLink: "https://i.imgur.com/LDDxxJY.png",
+    imgAlt: "Annotation on selected node of graph",
+    cardLink: "https://delbertina.github.io/d3-showcase/",
+    tags: ["React", "Ionic", "D3.js"]
+  },
+  {
     title: "delbertina.com",
     subtitle: "The website you're on right now!",
     description:
