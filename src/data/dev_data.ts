@@ -4,22 +4,24 @@ export const DEV_DATA: ImgCardData[] = [
   {
     title: "Blissful Book Bin",
     subtitle: "Book cataloging app with React",
-    description: "The user can CRUD books, tags, and categories with notifications that the actions were successful or not. Utilizes the Faker API to explore 'new books' and add to your list. Stores data to local storage of the browser.",
+    description:
+      "The user can CRUD books, tags, and categories with notifications that the actions were successful or not. Utilizes the Faker API to explore 'new books' and add to your list. Stores data to local storage of the browser.",
     projectDate: new Date("2024-06"),
     imgLink: "https://i.imgur.com/I9WCizO.png",
     imgAlt: "Editing the information for a book",
     cardLink: "https://delbertina.github.io/BlissfulBookBin/",
-    tags: ["React", "MUI"]
+    tags: ["React", "MUI"],
   },
   {
     title: "Adept Quiz Wizard",
     subtitle: "Quiz CRUD application in React",
-    description: "The user can CRUD quizzes and then take the quizzes for a recorded score.",
+    description:
+      "The user can CRUD quizzes and then take the quizzes for a recorded score. I focused on adding tests with Jest and React Testing Library to this project and a automaticly updating github badge to display the 100% code coverage that I was able to achieve.",
     projectDate: new Date("2024-05"),
     imgLink: "https://i.imgur.com/XJW7SeJ.png",
     imgAlt: "Editing an existing quiz",
     cardLink: "https://delbertina.github.io/AdeptQuizWizard/",
-    tags: ["React", "MUI"]
+    tags: ["React", "MUI", "Jest"],
   },
   {
     title: "A Blinking Cursor",
@@ -59,12 +61,13 @@ export const DEV_DATA: ImgCardData[] = [
   {
     title: "Helpful Audio Chopper",
     subtitle: "Python application to split up an audio file and name the parts",
-    description: "Originally made to split up YouTube video audio of 500+ sound effects, but built with reusability in mind.",
+    description:
+      "Originally made to split up YouTube video audio of 500+ sound effects, but built with reusability in mind.",
     projectDate: new Date("2024-01"),
     imgLink: "https://i.imgur.com/xt8TfZq.png",
     imgAlt: "Chunks found from audio file",
     cardLink: "https://github.com/delbertina/HelpfulAudioChopper",
-    tags: ["Python"]
+    tags: ["Python"],
   },
   {
     title: "Multi Timer App",
@@ -104,12 +107,13 @@ export const DEV_DATA: ImgCardData[] = [
   {
     title: "D3 Showcase",
     subtitle: "A simple Ionic React app showcasing the D3 library ",
-    description: "A collection of proof of concepts for D3 graphs in Ionic React. Originally created to learn D3 for a professional project.",
+    description:
+      "A collection of proof of concepts for D3 graphs in Ionic React. Originally created to learn D3 for a professional project.",
     projectDate: new Date("2022-07"),
     imgLink: "https://i.imgur.com/LDDxxJY.png",
     imgAlt: "Annotation on selected node of graph",
     cardLink: "https://delbertina.github.io/d3-showcase/",
-    tags: ["React", "Ionic", "D3.js"]
+    tags: ["React", "Ionic", "D3.js"],
   },
   {
     title: "delbertina.com",
@@ -226,11 +230,12 @@ export const DEV_DATA: ImgCardData[] = [
   {
     title: "Talented Typing Turtle",
     subtitle: "Script to print text using the turtle library",
-    description: "Built in down time during Python class in college. I essentially finished the coursework in the first couple weeks so I had a lot of time to explore various cool libraries.",
+    description:
+      "Built in down time during Python class in college. I essentially finished the coursework in the first couple weeks so I had a lot of time to explore various cool libraries.",
     projectDate: new Date("2016-09"),
     imgLink: "https://i.imgur.com/4SJKqnD.png",
     imgAlt: "The output of talented displayed on the canvas",
     cardLink: "https://github.com/delbertina/TalentedTypingTurtle",
-    tags: ["Python", "Turtle"]
-  }
+    tags: ["Python", "Turtle"],
+  },
 ];
