@@ -1,14 +1,21 @@
 # delbertina's Homepage
 
 TODO
-- put all of my projects on display
+- put all of my dev projects on display
 - add photography highlights
 - add digital art highlights
+- Add sorting and filtering functionality
 
 
 DONE
 - change to be delbertina.com
-- make sure stuff works
+
+## Home Page
+![image](https://github.com/delbertina/delbertina-homepage/assets/6349928/65ef6f53-0030-4341-a0b4-2fff93794553)
+
+## Dev Projects
+![image](https://github.com/delbertina/delbertina-homepage/assets/6349928/e66626c2-5b9e-4239-bbc9-aefb0dbd0042)
+
 
 # Svelte + Vite
 
