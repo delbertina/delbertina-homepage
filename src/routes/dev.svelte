@@ -4,17 +4,32 @@
   import LinkImgButton from "../lib/LinkImgButton.svelte";
   // @ts-ignore
   import GoMarkGithub from "svelte-icons/go/GoMarkGithub.svelte";
+  // @ts-ignore
+  import FaSortDown from "svelte-icons/fa/FaSortDown.svelte";
+  // @ts-ignore
+  import FaSortUp from "svelte-icons/fa/FaSortUp.svelte";
   import { DEV_DATA } from "../data/dev_data.js";
-  import { ImgCardItem } from "../types/card-data.js";
+  import { ImgCardItem, sortImgCardData } from "../types/card-data.js";
+  import IconButton from "../lib/IconButton.svelte";
 
   let headerSummaryExpanded = false;
   const headerSummaryText =
     "Seasoned software engineer with a knack for finding creative solutions to complex problems. I enjoy learning new languages/frameworks/libraries that help me create solutions to problems in my everyday life. I also enjoy utilizing technology to make provocative/funny/useful software for anyone to get value from.";
-  const sortedDevData = DEV_DATA.sort((a, b) => a.projectDate < b.projectDate ? 1 : -1);
+  let isSortDevDataDesc = true;
+  let sortedDevData = DEV_DATA.sort((a, b) =>
+    sortImgCardData(a, b, isSortDevDataDesc)
+  );
 
   function toggleHeaderSummaryExpand(): void {
     // TODO: Add some way to ease in and out of this state
     headerSummaryExpanded = !headerSummaryExpanded;
+  }
+
+  function toggleDateSort(): void {
+    isSortDevDataDesc = !isSortDevDataDesc;
+    sortedDevData = DEV_DATA.sort((a, b) =>
+      sortImgCardData(a, b, isSortDevDataDesc)
+    );
   }
 
   function handleClick(url: string): void {
@@ -38,11 +53,31 @@
       {headerSummaryExpanded ? "Show Less" : "Show More"}
     </button>
   {/if}
-  <LinkIconButton link="https://github.com/delbertina" title="My Github account">
+  <LinkIconButton
+    link="https://github.com/delbertina"
+    title="My Github account"
+  >
     <GoMarkGithub slot="icon" />
   </LinkIconButton>
 </main>
 <div class="content">
+  <div class="content-filters">
+    <div class="content-filters-row">
+      <IconButton
+        title="Toggle date sorting"
+        text={isSortDevDataDesc ? "Desc" : "Asc"}
+        onClick={() => toggleDateSort()}
+      >
+        <div slot="icon">
+          {#if isSortDevDataDesc}
+            ▼
+          {:else}
+            ▲
+          {/if}
+        </div>
+      </IconButton>
+    </div>
+  </div>
   {#each sortedDevData as item}
     <ImgCard cardItem={new ImgCardItem(item)} />
   {/each}
@@ -54,5 +89,9 @@
   }
   .header-summary {
     width: 80%;
+  }
+  .content-filters-row {
+    display: flex;
+    flex-direction: row;
   }
 </style>

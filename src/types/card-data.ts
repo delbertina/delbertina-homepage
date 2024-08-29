@@ -33,3 +33,11 @@ export interface ImgCardData {
   imgAlt: string;
   tags: Array<string>;
 }
+
+export function sortImgCardData(
+  a: ImgCardData,
+  b: ImgCardData,
+  isDesc: boolean
+): number {
+  return a.projectDate < b.projectDate ? (isDesc ? 1 : -1) : isDesc ? -1 : 1;
+}
