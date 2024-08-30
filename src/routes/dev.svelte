@@ -4,13 +4,10 @@
   import LinkImgButton from "../lib/LinkImgButton.svelte";
   // @ts-ignore
   import GoMarkGithub from "svelte-icons/go/GoMarkGithub.svelte";
-  // @ts-ignore
-  import FaSortDown from "svelte-icons/fa/FaSortDown.svelte";
-  // @ts-ignore
-  import FaSortUp from "svelte-icons/fa/FaSortUp.svelte";
   import { DEV_DATA } from "../data/dev_data.js";
   import { ImgCardItem, sortImgCardData } from "../types/card-data.js";
   import IconButton from "../lib/IconButton.svelte";
+  import Button from "../lib/Button.svelte";
 
   let headerSummaryExpanded = false;
   const headerSummaryText =
@@ -63,9 +60,12 @@
 <div class="content">
   <div class="content-filters">
     <div class="content-filters-row">
+      <div class="content-filters-row-count">
+        <Button isDisabled={true} title="Displayed items count" text={sortedDevData.length + ""} />
+      </div>
       <IconButton
         title="Toggle date sorting"
-        text={isSortDevDataDesc ? "Desc" : "Asc"}
+        text="Date"
         onClick={() => toggleDateSort()}
       >
         <div slot="icon">
@@ -93,5 +93,6 @@
   .content-filters-row {
     display: flex;
     flex-direction: row;
+    gap: 8px;
   }
 </style>
