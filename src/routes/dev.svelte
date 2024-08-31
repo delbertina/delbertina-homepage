@@ -63,6 +63,7 @@
       <div class="content-filters-row-count">
         <Button isDisabled={true} title="Displayed items count" text={sortedDevData.length + ""} />
       </div>
+      <div>
       <IconButton
         title="Toggle date sorting"
         text="Date"
@@ -76,6 +77,13 @@
           {/if}
         </div>
       </IconButton>
+    </div>
+      <div class="content-filters-row-divider" />
+      <div class="content-filters-row-tags">
+        {#each [...new Set(sortedDevData.map(item => item.tags).flat())] as item}
+        <Button isDisabled={true} title={item} text={item} />
+        {/each}
+        </div>
     </div>
   </div>
   {#each sortedDevData as item}
@@ -94,5 +102,19 @@
     display: flex;
     flex-direction: row;
     gap: 8px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .content-filters-row-divider{
+    min-height: 100%;
+    border: 1px solid grey;
+    border-radius: 25%;
+  }
+  .content-filters-row-tags {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
   }
 </style>
