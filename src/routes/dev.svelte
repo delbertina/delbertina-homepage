@@ -9,6 +9,11 @@
   import IconButton from "../lib/IconButton.svelte";
   import Button from "../lib/Button.svelte";
 
+  interface TotaledElm {
+    title: string;
+    value: number;
+  }
+
   let headerSummaryExpanded = false;
   const headerSummaryText =
     "Seasoned software engineer with a knack for finding creative solutions to complex problems. I enjoy learning new languages/frameworks/libraries that help me create solutions to problems in my everyday life. I also enjoy utilizing technology to make provocative/funny/useful software for anyone to get value from.";
@@ -16,6 +21,7 @@
   let sortedDevData = DEV_DATA.sort((a, b) =>
     sortImgCardData(a, b, isSortDevDataDesc)
   );
+  let sortedDevTagList: TotaledElm[] = [];
 
   function toggleHeaderSummaryExpand(): void {
     // TODO: Add some way to ease in and out of this state
@@ -29,9 +35,26 @@
     );
   }
 
+  function updateSortedTagList(): void {
+    const counts = new Map();
+    sortedDevData
+      .map((item) => item.tags)
+      .flat()
+      .forEach((item: string) =>
+        counts.set(item, counts.get(item) ? counts.get(item) + 1 : 1)
+      );
+    const returnVal: TotaledElm[] = [];
+    counts.forEach((value: number, key: string) =>
+      returnVal.push({ title: key, value })
+    );
+    sortedDevTagList = returnVal.sort((a, b) => (a.value < b.value ? 1 : -1));
+  }
+
   function handleClick(url: string): void {
     window.open(url, "_blank")?.focus();
   }
+
+  updateSortedTagList();
 </script>
 
 <main>
@@ -61,29 +84,37 @@
   <div class="content-filters">
     <div class="content-filters-row">
       <div class="content-filters-row-count">
-        <Button isDisabled={true} title="Displayed items count" text={sortedDevData.length + ""} />
+        <Button
+          isDisabled={true}
+          title="Displayed items count"
+          text={sortedDevData.length + ""}
+        />
       </div>
       <div>
-      <IconButton
-        title="Toggle date sorting"
-        text="Date"
-        onClick={() => toggleDateSort()}
-      >
-        <div slot="icon">
-          {#if isSortDevDataDesc}
-            ▼
-          {:else}
-            ▲
-          {/if}
-        </div>
-      </IconButton>
-    </div>
+        <IconButton
+          title="Toggle date sorting"
+          text="Date"
+          onClick={() => toggleDateSort()}
+        >
+          <div slot="icon">
+            {#if isSortDevDataDesc}
+              ▼
+            {:else}
+              ▲
+            {/if}
+          </div>
+        </IconButton>
+      </div>
       <div class="content-filters-row-divider" />
       <div class="content-filters-row-tags">
-        {#each [...new Set(sortedDevData.map(item => item.tags).flat())] as item}
-        <Button isDisabled={true} title={item} text={item} />
+        {#each sortedDevTagList as item}
+          <Button
+            isDisabled={true}
+            title={item.title}
+            text={item.title + "(" + item.value + ")"}
+          />
         {/each}
-        </div>
+      </div>
     </div>
   </div>
   {#each sortedDevData as item}
@@ -105,7 +136,7 @@
     max-width: 100%;
     overflow: hidden;
   }
-  .content-filters-row-divider{
+  .content-filters-row-divider {
     min-height: 100%;
     border: 1px solid grey;
     border-radius: 25%;
@@ -116,5 +147,16 @@
     gap: 8px;
     overflow-x: scroll;
     scrollbar-width: thin;
+    --mask: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 1%,
+      rgba(0, 0, 0, 1) 32px,
+      rgba(0, 0, 0, 1) 0,
+      rgba(0, 0, 0, 1) calc(100% - 32px),
+      rgba(0, 0, 0, 0) 99%
+    );
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    padding: 0 32px;
   }
 </style>

@@ -20,7 +20,7 @@
       border-radius: 2em;
       border: 2px solid rgba(255, 62, 0, 0);
       outline: none;
-      max-width: 100px;
+      max-width: 150px;
       font-variant-numeric: tabular-nums;
       cursor: pointer;
       display: flex;
