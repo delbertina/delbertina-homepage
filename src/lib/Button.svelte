@@ -2,9 +2,10 @@
     export let title: string;
     export let text: string;
     export let isDisabled: boolean = false;
+    export let onClick: () => void;
   </script>
   
-  <button {title} disabled={isDisabled}>
+  <button {title} disabled={isDisabled} on:click={() => onClick()}>
     <div>
       {text}
     </div>
@@ -20,7 +21,6 @@
       border-radius: 2em;
       border: 2px solid rgba(255, 62, 0, 0);
       outline: none;
-      /* max-width: 150px; */
       text-overflow: ellipsis;
       font-variant-numeric: tabular-nums;
       cursor: pointer;

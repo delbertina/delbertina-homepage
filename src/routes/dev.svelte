@@ -5,7 +5,7 @@
   // @ts-ignore
   import GoMarkGithub from "svelte-icons/go/GoMarkGithub.svelte";
   import { DEV_DATA } from "../data/dev_data.js";
-  import { ImgCardItem, sortImgCardData } from "../types/card-data.js";
+  import { ImgCardItem, sortImgCardData, type ImgCardData } from "../types/card-data.js";
   import IconButton from "../lib/IconButton.svelte";
   import Button from "../lib/Button.svelte";
 
@@ -18,10 +18,9 @@
   const headerSummaryText =
     "Seasoned software engineer with a knack for finding creative solutions to complex problems. I enjoy learning new languages/frameworks/libraries that help me create solutions to problems in my everyday life. I also enjoy utilizing technology to make provocative/funny/useful software for anyone to get value from.";
   let isSortDevDataDesc = true;
-  let sortedDevData = DEV_DATA.sort((a, b) =>
-    sortImgCardData(a, b, isSortDevDataDesc)
-  );
+  let sortedDevData: ImgCardData[] = [];
   let sortedDevTagList: TotaledElm[] = [];
+  let selectedTags: string[] = [];
 
   function toggleHeaderSummaryExpand(): void {
     // TODO: Add some way to ease in and out of this state
@@ -30,9 +29,26 @@
 
   function toggleDateSort(): void {
     isSortDevDataDesc = !isSortDevDataDesc;
-    sortedDevData = DEV_DATA.sort((a, b) =>
+    updateSortedData();
+  }
+
+  function updateSortedData(): void {
+    sortedDevData = DEV_DATA.filter(item => 
+      item.tags.filter(tag => selectedTags.length === 0 || selectedTags.indexOf(tag) !== -1).length > 0
+    ).sort((a, b) =>
       sortImgCardData(a, b, isSortDevDataDesc)
     );
+    updateSortedTagList();
+  }
+
+  function toggleTag(tag: string): void {
+    const tagInd = selectedTags.indexOf(tag);
+    if (tagInd === -1) {
+      selectedTags.push(tag);
+    } else {
+      selectedTags = selectedTags.filter(item => item !== tag);
+    }
+    updateSortedData();
   }
 
   function updateSortedTagList(): void {
@@ -49,12 +65,7 @@
     );
     sortedDevTagList = returnVal.sort((a, b) => (a.value < b.value ? 1 : -1));
   }
-
-  function handleClick(url: string): void {
-    window.open(url, "_blank")?.focus();
-  }
-
-  updateSortedTagList();
+  updateSortedData();
 </script>
 
 <main>
@@ -88,6 +99,7 @@
           isDisabled={true}
           title="Displayed items count"
           text={sortedDevData.length + ""}
+          onClick={() => {}}
         />
       </div>
       <div>
@@ -109,9 +121,9 @@
       <div class="content-filters-row-tags">
         {#each sortedDevTagList as item}
           <Button
-            isDisabled={true}
             title={item.title}
             text={item.title + " (" + item.value + ")"}
+            onClick={() => toggleTag(item.title)}
           />
         {/each}
       </div>
