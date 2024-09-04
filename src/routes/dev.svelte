@@ -111,7 +111,7 @@
           <Button
             isDisabled={true}
             title={item.title}
-            text={item.title + "(" + item.value + ")"}
+            text={item.title + " (" + item.value + ")"}
           />
         {/each}
       </div>

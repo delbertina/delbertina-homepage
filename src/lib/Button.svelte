@@ -20,13 +20,15 @@
       border-radius: 2em;
       border: 2px solid rgba(255, 62, 0, 0);
       outline: none;
-      max-width: 150px;
+      /* max-width: 150px; */
+      text-overflow: ellipsis;
       font-variant-numeric: tabular-nums;
       cursor: pointer;
       display: flex;
       align-content: center;
       align-items: center;
       gap: 8px;
+      text-wrap: nowrap;
     }
   
     button:focus {
