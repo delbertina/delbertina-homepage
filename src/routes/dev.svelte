@@ -123,6 +123,7 @@
           <Button
             title={item.title}
             text={item.title + " (" + item.value + ")"}
+            isSelected={selectedTags.indexOf(item.title) !== -1}
             onClick={() => toggleTag(item.title)}
           />
         {/each}
