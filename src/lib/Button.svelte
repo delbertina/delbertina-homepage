@@ -37,10 +37,6 @@
     text-wrap: nowrap;
   }
 
-  /* button:focus {
-    border: 2px solid #ff3e00;
-  } */
-
   button:active {
     background-color: rgba(255, 62, 0, 0.2);
   }

@@ -5,7 +5,11 @@
   // @ts-ignore
   import GoMarkGithub from "svelte-icons/go/GoMarkGithub.svelte";
   import { DEV_DATA } from "../data/dev_data.js";
-  import { ImgCardItem, sortImgCardData, type ImgCardData } from "../types/card-data.js";
+  import {
+    ImgCardItem,
+    sortImgCardData,
+    type ImgCardData,
+  } from "../types/card-data.js";
   import IconButton from "../lib/IconButton.svelte";
   import Button from "../lib/Button.svelte";
 
@@ -33,11 +37,12 @@
   }
 
   function updateSortedData(): void {
-    sortedDevData = DEV_DATA.filter(item => 
-      item.tags.filter(tag => selectedTags.length === 0 || selectedTags.indexOf(tag) !== -1).length > 0
-    ).sort((a, b) =>
-      sortImgCardData(a, b, isSortDevDataDesc)
-    );
+    sortedDevData = DEV_DATA.filter(
+      (item) =>
+        item.tags.filter(
+          (tag) => selectedTags.length === 0 || selectedTags.indexOf(tag) !== -1
+        ).length > 0
+    ).sort((a, b) => sortImgCardData(a, b, isSortDevDataDesc));
     updateSortedTagList();
   }
 
@@ -46,7 +51,7 @@
     if (tagInd === -1) {
       selectedTags.push(tag);
     } else {
-      selectedTags = selectedTags.filter(item => item !== tag);
+      selectedTags = selectedTags.filter((item) => item !== tag);
     }
     updateSortedData();
   }
@@ -63,7 +68,19 @@
     counts.forEach((value: number, key: string) =>
       returnVal.push({ title: key, value })
     );
-    sortedDevTagList = returnVal.sort((a, b) => (a.value < b.value ? 1 : -1));
+    sortedDevTagList = returnVal
+      .sort((a, b) => (a.value < b.value ? 1 : -1))
+      .sort((a, b) => {
+        const aInd = selectedTags.indexOf(a.title);
+        const bInd = selectedTags.indexOf(b.title);
+        return aInd !== -1 && bInd !== -1
+          ? 0
+          : aInd !== -1
+            ? -1
+            : bInd !== -1
+              ? 1
+              : 0;
+      });
   }
   updateSortedData();
 </script>
