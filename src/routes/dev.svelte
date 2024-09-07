@@ -69,7 +69,9 @@
       returnVal.push({ title: key, value })
     );
     sortedDevTagList = returnVal
+    // sort by count
       .sort((a, b) => (a.value < b.value ? 1 : -1))
+    // sort all selected tags to the top
       .sort((a, b) => {
         const aInd = selectedTags.indexOf(a.title);
         const bInd = selectedTags.indexOf(b.title);
