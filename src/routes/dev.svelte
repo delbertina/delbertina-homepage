@@ -69,9 +69,9 @@
       returnVal.push({ title: key, value })
     );
     sortedDevTagList = returnVal
-    // sort by count
+      // sort by count
       .sort((a, b) => (a.value < b.value ? 1 : -1))
-    // sort all selected tags to the top
+      // sort all selected tags to the top
       .sort((a, b) => {
         const aInd = selectedTags.indexOf(a.title);
         const bInd = selectedTags.indexOf(b.title);
@@ -147,6 +147,14 @@
           />
         {/each}
       </div>
+      <div class="content-filters-row-tag-menu">
+        <Button
+          title={"Filter Tags"}
+          text={"Filter Tags"}
+          isDisabled={true}
+          onClick={() => console.log("Filter tags clicked")}
+        />
+      </div>
     </div>
   </div>
   {#each sortedDevData as item}
@@ -190,5 +198,15 @@
     -webkit-mask: var(--mask);
     mask: var(--mask);
     padding: 0 32px;
+  }
+  @media (max-width: 600px) {
+    .content-filters-row-tags {
+      display: none;
+    }
+  }
+  @media (min-width: 601px) {
+    .content-filters-row-tag-menu {
+      display: none;
+    }
   }
 </style>
