@@ -18,22 +18,27 @@
     value: number;
   }
 
-  let headerSummaryExpanded = false;
+  let isHeaderSummaryExpanded = false;
+  let isFilterTagsExpanded = false;
+  let isSortDevDataDesc = true;
   const headerSummaryText =
     "Seasoned software engineer with a knack for finding creative solutions to complex problems. I enjoy learning new languages/frameworks/libraries that help me create solutions to problems in my everyday life. I also enjoy utilizing technology to make provocative/funny/useful software for anyone to get value from.";
-  let isSortDevDataDesc = true;
   let sortedDevData: ImgCardData[] = [];
   let sortedDevTagList: TotaledElm[] = [];
   let selectedTags: string[] = [];
 
   function toggleHeaderSummaryExpand(): void {
     // TODO: Add some way to ease in and out of this state
-    headerSummaryExpanded = !headerSummaryExpanded;
+    isHeaderSummaryExpanded = !isHeaderSummaryExpanded;
   }
 
   function toggleDateSort(): void {
     isSortDevDataDesc = !isSortDevDataDesc;
     updateSortedData();
+  }
+
+  function toggleFilterTags(): void {
+    isFilterTagsExpanded = !isFilterTagsExpanded;
   }
 
   function updateSortedData(): void {
@@ -91,7 +96,7 @@
   <LinkImgButton link="/" title="Back to home page" />
   <h1 class="unselectable">Software Development</h1>
   <h3 class="unselectable header-summary">
-    {headerSummaryText.length > 250 && !headerSummaryExpanded
+    {headerSummaryText.length > 250 && !isHeaderSummaryExpanded
       ? headerSummaryText.slice(0, 249) + "..."
       : headerSummaryText}
   </h3>
@@ -100,7 +105,7 @@
       class="styled-small-button closer-header-expand-button"
       on:click={() => toggleHeaderSummaryExpand()}
     >
-      {headerSummaryExpanded ? "Show Less" : "Show More"}
+      {isHeaderSummaryExpanded ? "Show Less" : "Show More"}
     </button>
   {/if}
   <LinkIconButton
@@ -149,13 +154,24 @@
       </div>
       <div class="content-filters-row-tag-menu">
         <Button
-          title={"Filter Tags"}
+          title={"Toggle filter by tags section"}
           text={"Filter Tags"}
-          isDisabled={true}
-          onClick={() => console.log("Filter tags clicked")}
+          onClick={() => toggleFilterTags()}
         />
       </div>
     </div>
+    {#if isFilterTagsExpanded}
+      <div class="content-filters-display-full">
+        {#each sortedDevTagList as item}
+          <Button
+            title={item.title}
+            text={item.title + " (" + item.value + ")"}
+            isSelected={selectedTags.indexOf(item.title) !== -1}
+            onClick={() => toggleTag(item.title)}
+          />
+        {/each}
+      </div>
+    {/if}
   </div>
   {#each sortedDevData as item}
     <ImgCard cardItem={new ImgCardItem(item)} />
@@ -203,9 +219,19 @@
     .content-filters-row-tags {
       display: none;
     }
+    .content-filters-display-full {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
   }
   @media (min-width: 601px) {
     .content-filters-row-tag-menu {
+      display: none;
+    }
+    .content-filters-display-full {
       display: none;
     }
   }
