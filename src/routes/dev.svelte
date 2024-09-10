@@ -12,6 +12,7 @@
   } from "../types/card-data.js";
   import IconButton from "../lib/IconButton.svelte";
   import Button from "../lib/Button.svelte";
+  import Header from "../lib/Header.svelte";
 
   interface TotaledElm {
     title: string;
@@ -92,9 +93,8 @@
   updateSortedData();
 </script>
 
+<Header title="Software Development"/>
 <main>
-  <LinkImgButton link="/" title="Back to home page" />
-  <h1 class="unselectable">Software Development</h1>
   <h3 class="unselectable header-summary">
     {headerSummaryText.length > 250 && !isHeaderSummaryExpanded
       ? headerSummaryText.slice(0, 249) + "..."
@@ -179,6 +179,9 @@
 </div>
 
 <style>
+  main {
+    padding-top: 80px;
+  }
   .closer-header-expand-button {
     margin-top: -16px;
   }

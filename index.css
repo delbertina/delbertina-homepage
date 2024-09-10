@@ -5,6 +5,10 @@
   color: white;
 }
 
+body {
+  margin: 0;
+}
+
 main {
   text-align: center;
   padding: 1em;
