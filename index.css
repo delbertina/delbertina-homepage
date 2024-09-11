@@ -89,3 +89,7 @@ h3 {
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
 }
+
+.header-padding {
+  padding-top: 80px;
+}

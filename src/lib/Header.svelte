@@ -6,12 +6,11 @@
 
 <div class="header-wrapper">
   <LinkImgButton link="/" title="Back to home page" />
-  <!-- <div> -->
-  <h1>
+  <h1 class="unselectable">
     {title}
   </h1>
-  <!-- </div> -->
 </div>
+<div class="header-padding" />
 
 <style>
   .header-wrapper {
@@ -47,7 +46,12 @@
     }
     & > h1 {
       margin: unset;
-      margin-top: -8px;
+      align-self: center;
+    }
+  }
+  @media (max-width: 900px) {
+    .header-wrapper > h1 {
+        font-size: 2rem;
     }
   }
 </style>

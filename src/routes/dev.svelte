@@ -179,9 +179,6 @@
 </div>
 
 <style>
-  main {
-    padding-top: 80px;
-  }
   .closer-header-expand-button {
     margin-top: -16px;
   }
