@@ -1,7 +1,6 @@
 <script lang="ts">
   import ImgCard from "../lib/ImgCard.svelte";
   import LinkIconButton from "../lib/LinkIconButton.svelte";
-  import LinkImgButton from "../lib/LinkImgButton.svelte";
   // @ts-ignore
   import GoMarkGithub from "svelte-icons/go/GoMarkGithub.svelte";
   import { DEV_DATA } from "../data/dev_data.js";
@@ -94,7 +93,8 @@
 </script>
 
 <Header title="Software Development"/>
-<main>
+<div class="subheader-section">
+  <div class="subheader-section-text">
   <h3 class="unselectable header-summary">
     {headerSummaryText.length > 250 && !isHeaderSummaryExpanded
       ? headerSummaryText.slice(0, 249) + "..."
@@ -108,13 +108,14 @@
       {isHeaderSummaryExpanded ? "Show Less" : "Show More"}
     </button>
   {/if}
+</div>
   <LinkIconButton
     link="https://github.com/delbertina"
     title="My Github account"
   >
     <GoMarkGithub slot="icon" />
   </LinkIconButton>
-</main>
+</div>
 <div class="content">
   <div class="content-filters">
     <div class="content-filters-row">
@@ -182,9 +183,6 @@
   .closer-header-expand-button {
     margin-top: -16px;
   }
-  .header-summary {
-    width: 80%;
-  }
   .content-filters-row {
     display: flex;
     flex-direction: row;
@@ -234,5 +232,24 @@
     .content-filters-display-full {
       display: none;
     }
+  }
+  .subheader-section {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    background: rgba(0,0,0,0.2);
+    padding: 0 5%;
+    gap: 16px;
+    &> button {
+      align-self: center;
+    }
+  }
+
+  .subheader-section-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
   }
 </style>
