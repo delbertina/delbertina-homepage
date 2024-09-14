@@ -1,8 +1,6 @@
 <script lang="ts">
   import ImgCard from "../lib/ImgCard.svelte";
   import LinkIconButton from "../lib/LinkIconButton.svelte";
-  // @ts-ignore
-  import GoMarkGithub from "svelte-icons/go/GoMarkGithub.svelte";
   import { DEV_DATA } from "../data/dev_data.js";
   import {
     ImgCardItem,
@@ -12,25 +10,20 @@
   import IconButton from "../lib/IconButton.svelte";
   import Button from "../lib/Button.svelte";
   import Header from "../lib/Header.svelte";
+  import Subheader from "../lib/Subheader.svelte";
 
   interface TotaledElm {
     title: string;
     value: number;
   }
 
-  let isHeaderSummaryExpanded = false;
   let isFilterTagsExpanded = false;
   let isSortDevDataDesc = true;
-  const headerSummaryText =
+  const subheaderText =
     "Seasoned software engineer with a knack for finding creative solutions to complex problems. I enjoy learning new languages/frameworks/libraries that help me create solutions to problems in my everyday life. I also enjoy utilizing technology to make provocative/funny/useful software for anyone to get value from.";
   let sortedDevData: ImgCardData[] = [];
   let sortedDevTagList: TotaledElm[] = [];
-  let selectedTags: string[] = [];
-
-  function toggleHeaderSummaryExpand(): void {
-    // TODO: Add some way to ease in and out of this state
-    isHeaderSummaryExpanded = !isHeaderSummaryExpanded;
-  }
+  let selectedTags: string[] = [];  
 
   function toggleDateSort(): void {
     isSortDevDataDesc = !isSortDevDataDesc;
@@ -93,29 +86,7 @@
 </script>
 
 <Header title="Software Development"/>
-<div class="subheader-section">
-  <div class="subheader-section-text">
-  <h3 class="unselectable header-summary">
-    {headerSummaryText.length > 250 && !isHeaderSummaryExpanded
-      ? headerSummaryText.slice(0, 249) + "..."
-      : headerSummaryText}
-  </h3>
-  {#if headerSummaryText.length > 250}
-    <button
-      class="styled-small-button closer-header-expand-button"
-      on:click={() => toggleHeaderSummaryExpand()}
-    >
-      {isHeaderSummaryExpanded ? "Show Less" : "Show More"}
-    </button>
-  {/if}
-</div>
-  <LinkIconButton
-    link="https://github.com/delbertina"
-    title="My Github account"
-  >
-    <GoMarkGithub slot="icon" />
-  </LinkIconButton>
-</div>
+<Subheader text={subheaderText} />
 <div class="content">
   <div class="content-filters">
     <div class="content-filters-row">
@@ -180,9 +151,6 @@
 </div>
 
 <style>
-  .closer-header-expand-button {
-    margin-top: -16px;
-  }
   .content-filters-row {
     display: flex;
     flex-direction: row;
@@ -232,24 +200,5 @@
     .content-filters-display-full {
       display: none;
     }
-  }
-  .subheader-section {
-    display: flex;
-    flex-direction: row;
-    margin-top: 5%;
-    background: rgba(0,0,0,0.2);
-    padding: 0 5%;
-    gap: 16px;
-    &> button {
-      align-self: center;
-    }
-  }
-
-  .subheader-section-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
   }
 </style>
