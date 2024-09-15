@@ -1,6 +1,8 @@
 <script lang="ts">
   import ImgCard from "../lib/ImgCard.svelte";
   import LinkIconButton from "../lib/LinkIconButton.svelte";
+  // @ts-ignore
+  import GoMarkGithub from "svelte-icons/go/GoMarkGithub.svelte";
   import { DEV_DATA } from "../data/dev_data.js";
   import {
     ImgCardItem,
@@ -23,7 +25,7 @@
     "Seasoned software engineer with a knack for finding creative solutions to complex problems. I enjoy learning new languages/frameworks/libraries that help me create solutions to problems in my everyday life. I also enjoy utilizing technology to make provocative/funny/useful software for anyone to get value from.";
   let sortedDevData: ImgCardData[] = [];
   let sortedDevTagList: TotaledElm[] = [];
-  let selectedTags: string[] = [];  
+  let selectedTags: string[] = [];
 
   function toggleDateSort(): void {
     isSortDevDataDesc = !isSortDevDataDesc;
@@ -85,8 +87,16 @@
   updateSortedData();
 </script>
 
-<Header title="Software Development"/>
-<Subheader text={subheaderText} />
+<Header title="Software Development" />
+<Subheader text={subheaderText}>
+  <LinkIconButton
+    link="https://github.com/delbertina"
+    title="My Github account"
+    slot="icon"
+  >
+    <GoMarkGithub slot="icon" />
+  </LinkIconButton>
+</Subheader>
 <div class="content">
   <div class="content-filters">
     <div class="content-filters-row">
@@ -179,7 +189,7 @@
     );
     -webkit-mask: var(--mask);
     mask: var(--mask);
-    padding: 0 32px;
+    padding: 0 32px 4px 32px;
   }
   @media (max-width: 600px) {
     .content-filters-row-tags {

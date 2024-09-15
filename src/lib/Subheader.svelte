@@ -1,7 +1,4 @@
 <script lang="ts">
-  import LinkIconButton from "./LinkIconButton.svelte";
-  import GoMarkGithub from "svelte-icons/go/GoMarkGithub.svelte";
-
   export let text: string;
 
   let isTextExpanded: boolean = false;
@@ -26,12 +23,7 @@
       </button>
     {/if}
   </div>
-  <LinkIconButton
-    link="https://github.com/delbertina"
-    title="My Github account"
-  >
-    <GoMarkGithub slot="icon" />
-  </LinkIconButton>
+  <slot name="icon" />
 </div>
 
 <style>
