@@ -3,9 +3,11 @@
   import ImgCard from "../lib/ImgCard.svelte";
   import { ImgCardItem } from "../types/card-data.js";
   import Header from "../lib/Header.svelte";
+
+  const headerText = "Video Editing";
 </script>
 
-<Header title="Video Editing"/>
+<Header title={headerText} />
 <div class="content">
   {#each VIDEO_DATA as item}
     <ImgCard cardItem={new ImgCardItem(item)} />

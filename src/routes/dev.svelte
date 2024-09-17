@@ -19,10 +19,12 @@
     value: number;
   }
 
-  let isFilterTagsExpanded = false;
-  let isSortDevDataDesc = true;
+  const headerText = "Software Development";
   const subheaderText =
     "Seasoned software engineer with a knack for finding creative solutions to complex problems. I enjoy learning new languages/frameworks/libraries that help me create solutions to problems in my everyday life. I also enjoy utilizing technology to make provocative/funny/useful software for anyone to get value from.";
+
+  let isFilterTagsExpanded = false;
+  let isSortDevDataDesc = true;
   let sortedDevData: ImgCardData[] = [];
   let sortedDevTagList: TotaledElm[] = [];
   let selectedTags: string[] = [];
@@ -87,7 +89,7 @@
   updateSortedData();
 </script>
 
-<Header title="Software Development" />
+<Header title={headerText} />
 <Subheader text={subheaderText}>
   <LinkIconButton
     link="https://github.com/delbertina"

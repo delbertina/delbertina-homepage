@@ -4,12 +4,10 @@
   import { ImgCardItem } from "../types/card-data.js";
   import Header from "../lib/Header.svelte";
 
-  function handleClick(url: string): void {
-    window.open(url, "_blank")?.focus();
-  }
+  const headerText = "Digital Artist";
 </script>
 
-<Header title="Digital Artist"/>
+<Header title={headerText} />
 <div class="content">
   {#each ART_DATA as item}
     <ImgCard cardItem={new ImgCardItem(item)} />
