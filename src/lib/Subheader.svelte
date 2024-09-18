@@ -33,9 +33,9 @@
   .subheader-wrapper {
     display: flex;
     flex-direction: row;
-    margin-top: 5%;
+    margin-top: 32px;
     background: rgba(0, 0, 0, 0.2);
-    padding: 0 5%;
+    padding: 0 32px;
     gap: 16px;
     & > button {
       align-self: center;
