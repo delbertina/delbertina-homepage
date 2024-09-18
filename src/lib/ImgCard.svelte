@@ -42,7 +42,7 @@
   border: #28282e 2px solid;
   border-radius: 4px;
   padding: 1em;
-  margin: 1em;
+  margin: 1em 0;
   cursor: pointer;
   display: flex;
   flex-direction: row;
