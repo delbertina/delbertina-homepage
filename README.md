@@ -1,5 +1,11 @@
 # delbertina's Homepage
 
+A showcase of my Github projects as well as my other creative endevors. 
+
+Created with Svelte because it seemes like it has the potential to be one of the top most popular frameworks and I wanted to learn a new framework.
+
+##
+
 TODO
 - put all of my dev projects on display
 - add photography highlights
