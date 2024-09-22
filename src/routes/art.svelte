@@ -9,7 +9,18 @@
 
 <Header title={headerText} />
 <div class="content">
-  {#each ART_DATA as item}
+  <div class="content-card-list">
+    {#each ART_DATA as item}
     <ImgCard cardItem={new ImgCardItem(item)} />
-  {/each}
+    {/each}
+  </div>
 </div>
+
+<style>
+  .content-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 16px 0;
+  }
+</style>

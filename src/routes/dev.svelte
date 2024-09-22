@@ -157,9 +157,11 @@
       </div>
     {/if}
   </div>
-  {#each sortedDevData as item}
-    <ImgCard cardItem={new ImgCardItem(item)} />
-  {/each}
+  <div class="content-card-list">
+    {#each sortedDevData as item}
+      <ImgCard cardItem={new ImgCardItem(item)} />
+    {/each}
+  </div>
 </div>
 
 <style>
@@ -212,5 +214,12 @@
     .content-filters-display-full {
       display: none;
     }
+  }
+
+  .content-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 16px 0;
   }
 </style>
