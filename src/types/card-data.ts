@@ -12,7 +12,7 @@ export class ImgCardItem {
     this.title = data.title;
     this.subtitle = data.subtitle;
     this.description = data.description;
-    this.footer = data.projectDate.toLocaleDateString(undefined, {
+    this.footer = data.cardDate.toLocaleDateString(undefined, {
       year: "numeric",
       month: "short",
     });
@@ -27,7 +27,7 @@ export interface ImgCardData {
   title: string;
   subtitle: string;
   description: string;
-  projectDate: Date;
+  cardDate: Date;
   cardLink: string;
   imgLink: string;
   imgAlt: string;
@@ -39,5 +39,5 @@ export function sortImgCardData(
   b: ImgCardData,
   isDesc: boolean
 ): number {
-  return a.projectDate < b.projectDate ? (isDesc ? 1 : -1) : isDesc ? -1 : 1;
+  return a.cardDate < b.cardDate ? (isDesc ? 1 : -1) : isDesc ? -1 : 1;
 }

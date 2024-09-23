@@ -1,18 +1,17 @@
 <script lang="ts">
-  import ImgCard from "../lib/ImgCard.svelte";
   import LinkIconButton from "../lib/LinkIconButton.svelte";
   // @ts-ignore
   import GoMarkGithub from "svelte-icons/go/GoMarkGithub.svelte";
   import { DEV_DATA } from "../data/dev_data.js";
   import {
-    ImgCardItem,
     sortImgCardData,
     type ImgCardData,
-  } from "../types/card-data.js";
+  } from "../types/card-data";
   import IconButton from "../lib/IconButton.svelte";
   import Button from "../lib/Button.svelte";
   import Header from "../lib/Header.svelte";
   import Subheader from "../lib/Subheader.svelte";
+  import ImgCardList from "../lib/ImgCardList.svelte";
 
   interface TotaledElm {
     title: string;
@@ -157,11 +156,7 @@
       </div>
     {/if}
   </div>
-  <div class="content-card-list">
-    {#each sortedDevData as item}
-      <ImgCard cardItem={new ImgCardItem(item)} />
-    {/each}
-  </div>
+  <ImgCardList cards={sortedDevData} />
 </div>
 
 <style>
@@ -214,12 +209,5 @@
     .content-filters-display-full {
       display: none;
     }
-  }
-
-  .content-card-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin: 16px 0;
   }
 </style>
