@@ -6,17 +6,13 @@
   import {
     sortImgCardData,
     type ImgCardData,
-  } from "../types/card-data";
+    type KeyValuePair,
+  } from "../types/card-data.js";
   import IconButton from "../lib/IconButton.svelte";
   import Button from "../lib/Button.svelte";
   import Header from "../lib/Header.svelte";
   import Subheader from "../lib/Subheader.svelte";
   import ImgCardList from "../lib/ImgCardList.svelte";
-
-  interface TotaledElm {
-    title: string;
-    value: number;
-  }
 
   const headerText = "Software Development";
   const subheaderText =
@@ -25,7 +21,7 @@
   let isFilterTagsExpanded = false;
   let isSortDevDataDesc = true;
   let sortedDevData: ImgCardData[] = [];
-  let sortedDevTagList: TotaledElm[] = [];
+  let sortedDevTagList: KeyValuePair[] = [];
   let selectedTags: string[] = [];
 
   function toggleDateSort(): void {
@@ -65,17 +61,17 @@
       .forEach((item: string) =>
         counts.set(item, counts.get(item) ? counts.get(item) + 1 : 1)
       );
-    const returnVal: TotaledElm[] = [];
+    const returnVal: KeyValuePair[] = [];
     counts.forEach((value: number, key: string) =>
-      returnVal.push({ title: key, value })
+      returnVal.push({ key, value })
     );
     sortedDevTagList = returnVal
       // sort by count
       .sort((a, b) => (a.value < b.value ? 1 : -1))
       // sort all selected tags to the top
       .sort((a, b) => {
-        const aInd = selectedTags.indexOf(a.title);
-        const bInd = selectedTags.indexOf(b.title);
+        const aInd = selectedTags.indexOf(a.key);
+        const bInd = selectedTags.indexOf(b.key);
         return aInd !== -1 && bInd !== -1
           ? 0
           : aInd !== -1
@@ -128,10 +124,10 @@
       <div class="content-filters-row-tags">
         {#each sortedDevTagList as item}
           <Button
-            title={item.title}
-            text={item.title + " (" + item.value + ")"}
-            isSelected={selectedTags.indexOf(item.title) !== -1}
-            onClick={() => toggleTag(item.title)}
+            title={item.key}
+            text={item.key + " (" + item.value + ")"}
+            isSelected={selectedTags.indexOf(item.key) !== -1}
+            onClick={() => toggleTag(item.key)}
           />
         {/each}
       </div>
@@ -147,10 +143,10 @@
       <div class="content-filters-display-full">
         {#each sortedDevTagList as item}
           <Button
-            title={item.title}
-            text={item.title + " (" + item.value + ")"}
-            isSelected={selectedTags.indexOf(item.title) !== -1}
-            onClick={() => toggleTag(item.title)}
+            title={item.key}
+            text={item.key + " (" + item.value + ")"}
+            isSelected={selectedTags.indexOf(item.key) !== -1}
+            onClick={() => toggleTag(item.key)}
           />
         {/each}
       </div>

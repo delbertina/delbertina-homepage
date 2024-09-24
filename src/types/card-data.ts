@@ -41,3 +41,8 @@ export function sortImgCardData(
 ): number {
   return a.cardDate < b.cardDate ? (isDesc ? 1 : -1) : isDesc ? -1 : 1;
 }
+
+export interface KeyValuePair {
+  key: string;
+  value: number;
+}
