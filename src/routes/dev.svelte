@@ -13,6 +13,7 @@
   import Header from "../lib/Header.svelte";
   import Subheader from "../lib/Subheader.svelte";
   import ImgCardList from "../lib/ImgCardList.svelte";
+  import ChipSelect from "../lib/ChipSelect.svelte";
 
   const headerText = "Software Development";
   const subheaderText =
@@ -141,14 +142,11 @@
     </div>
     {#if isFilterTagsExpanded}
       <div class="content-filters-display-full">
-        {#each sortedDevTagList as item}
-          <Button
-            title={item.key}
-            text={item.key + " (" + item.value + ")"}
-            isSelected={selectedTags.indexOf(item.key) !== -1}
-            onClick={() => toggleTag(item.key)}
-          />
-        {/each}
+        <ChipSelect
+          chips={sortedDevTagList}
+          selectedChips={selectedTags}
+          onChipClick={(key) => toggleTag(key)}
+        />
       </div>
     {/if}
   </div>
@@ -189,13 +187,6 @@
   @media (max-width: 600px) {
     .content-filters-row-tags {
       display: none;
-    }
-    .content-filters-display-full {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 16px 0;
     }
   }
   @media (min-width: 601px) {
