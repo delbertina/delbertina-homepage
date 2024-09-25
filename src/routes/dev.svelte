@@ -122,20 +122,11 @@
         </IconButton>
       </div>
       <div class="content-filters-row-divider" />
-      <div class="content-filters-row-tags">
-        {#each sortedDevTagList as item}
-          <Button
-            title={item.key}
-            text={item.key + " (" + item.value + ")"}
-            isSelected={selectedTags.indexOf(item.key) !== -1}
-            onClick={() => toggleTag(item.key)}
-          />
-        {/each}
-      </div>
       <div class="content-filters-row-tag-menu">
         <Button
           title={"Toggle filter by tags section"}
           text={"Filter Tags"}
+          isSelected={isFilterTagsExpanded}
           onClick={() => toggleFilterTags()}
         />
       </div>
@@ -165,36 +156,5 @@
     min-height: 100%;
     border: 1px solid grey;
     border-radius: 25%;
-  }
-  .content-filters-row-tags {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    overflow-x: scroll;
-    scrollbar-width: thin;
-    --mask: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0) 1%,
-      rgba(0, 0, 0, 1) 32px,
-      rgba(0, 0, 0, 1) 0,
-      rgba(0, 0, 0, 1) calc(100% - 32px),
-      rgba(0, 0, 0, 0) 99%
-    );
-    -webkit-mask: var(--mask);
-    mask: var(--mask);
-    padding: 0 32px 4px 32px;
-  }
-  @media (max-width: 600px) {
-    .content-filters-row-tags {
-      display: none;
-    }
-  }
-  @media (min-width: 601px) {
-    .content-filters-row-tag-menu {
-      display: none;
-    }
-    .content-filters-display-full {
-      display: none;
-    }
   }
 </style>
