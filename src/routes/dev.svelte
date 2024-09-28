@@ -20,6 +20,7 @@
     "Seasoned software engineer with a knack for finding creative solutions to complex problems. I enjoy learning new languages/frameworks/libraries that help me create solutions to problems in my everyday life. I also enjoy utilizing technology to make provocative/funny/useful software for anyone to get value from.";
 
   let isFilterTagsExpanded = false;
+  let isFilterYearsExpanded = false;
   let isSortDevDataDesc = true;
   let sortedDevData: ImgCardData[] = [];
   let sortedDevTagList: KeyValuePair[] = [];
@@ -34,14 +35,24 @@
 
   function toggleFilterTags(): void {
     isFilterTagsExpanded = !isFilterTagsExpanded;
+    isFilterYearsExpanded = false;
+  }
+
+  function toggleFilterYears(): void {
+    isFilterYearsExpanded = !isFilterYearsExpanded;
+    isFilterTagsExpanded = false;
   }
 
   function updateSortedData(): void {
     sortedDevData = DEV_DATA.filter(
       (item) =>
-        item.tags.filter(
-          (tag) => selectedTags.length === 0 || selectedTags.indexOf(tag) !== -1
-        ).length > 0
+        // if no filters are selected, don't filter out anything
+        (selectedTags.length === 0 && selectedYears.length === 0) ||
+        // else, if the item has one of the tags selected
+        item.tags.filter((tag) => selectedTags.indexOf(tag) !== -1).length >
+          0 ||
+        // or the item has one of the years selected
+        selectedYears.indexOf(item.cardDate.getFullYear() + "") !== -1
     ).sort((a, b) => sortImgCardData(a, b, isSortDevDataDesc));
     updateSortedTagList();
     updateSortedYearList();
@@ -53,6 +64,16 @@
       selectedTags.push(tag);
     } else {
       selectedTags = selectedTags.filter((item) => item !== tag);
+    }
+    updateSortedData();
+  }
+
+  function toggleYear(year: string): void {
+    const yearInd = selectedYears.indexOf(year);
+    if (yearInd === -1) {
+      selectedYears.push(year);
+    } else {
+      selectedYears = selectedYears.filter((item) => item !== year);
     }
     updateSortedData();
   }
@@ -89,19 +110,18 @@
     const counts = new Map();
     sortedDevData
       .map((item) => item.cardDate.getFullYear())
-      .flat()
       .forEach((item: number) =>
         counts.set(item, counts.get(item) ? counts.get(item) + 1 : 1)
       );
     const returnVal: KeyValuePair[] = [];
-    counts.forEach((value: number, key: string) =>
-      returnVal.push({ key, value })
+    counts.forEach((value: number, key: number) =>
+      returnVal.push({ key: key + "", value })
     );
     sortedDevYearList = returnVal
-    // sort by year asc
-    .sort((a, b) => (a.key < b.key ? -1 : 1))
+      // sort by year asc
+      .sort((a, b) => (a.key < b.key ? -1 : 1))
       // sort all selected tags to the top
-    .sort((a, b) => {
+      .sort((a, b) => {
         const aInd = selectedYears.indexOf(a.key);
         const bInd = selectedYears.indexOf(b.key);
         return aInd !== -1 && bInd !== -1
@@ -112,7 +132,6 @@
               ? 1
               : 0;
       });
-    console.log(sortedDevYearList);
   }
   updateSortedData();
 </script>
@@ -154,14 +173,18 @@
         </IconButton>
       </div>
       <div class="content-filters-row-divider" />
-      <div class="content-filters-row-tag-menu">
-        <Button
-          title={"Toggle filter by tags section"}
-          text={"Filter Tags"}
-          isSelected={isFilterTagsExpanded}
-          onClick={() => toggleFilterTags()}
-        />
-      </div>
+      <Button
+        title={"Toggle filter by tags section"}
+        text={"Filter Tags"}
+        isSelected={isFilterTagsExpanded}
+        onClick={() => toggleFilterTags()}
+      />
+      <Button
+        title={"Toggle filter by years section"}
+        text={"Filter Years"}
+        isSelected={isFilterYearsExpanded}
+        onClick={() => toggleFilterYears()}
+      />
     </div>
     {#if isFilterTagsExpanded}
       <div class="content-filters-display-full">
@@ -169,6 +192,15 @@
           chips={sortedDevTagList}
           selectedChips={selectedTags}
           onChipClick={(key) => toggleTag(key)}
+        />
+      </div>
+    {/if}
+    {#if isFilterYearsExpanded}
+      <div class="content-filters-display-full">
+        <ChipSelect
+          chips={sortedDevYearList}
+          selectedChips={selectedYears}
+          onChipClick={(key) => toggleYear(key)}
         />
       </div>
     {/if}
