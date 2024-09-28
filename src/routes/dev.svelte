@@ -24,6 +24,8 @@
   let sortedDevData: ImgCardData[] = [];
   let sortedDevTagList: KeyValuePair[] = [];
   let selectedTags: string[] = [];
+  let sortedDevYearList: KeyValuePair[] = [];
+  let selectedYears: string[] = [];
 
   function toggleDateSort(): void {
     isSortDevDataDesc = !isSortDevDataDesc;
@@ -42,6 +44,7 @@
         ).length > 0
     ).sort((a, b) => sortImgCardData(a, b, isSortDevDataDesc));
     updateSortedTagList();
+    updateSortedYearList();
   }
 
   function toggleTag(tag: string): void {
@@ -81,6 +84,35 @@
               ? 1
               : 0;
       });
+  }
+  function updateSortedYearList(): void {
+    const counts = new Map();
+    sortedDevData
+      .map((item) => item.cardDate.getFullYear())
+      .flat()
+      .forEach((item: number) =>
+        counts.set(item, counts.get(item) ? counts.get(item) + 1 : 1)
+      );
+    const returnVal: KeyValuePair[] = [];
+    counts.forEach((value: number, key: string) =>
+      returnVal.push({ key, value })
+    );
+    sortedDevYearList = returnVal
+    // sort by year asc
+    .sort((a, b) => (a.key < b.key ? -1 : 1))
+      // sort all selected tags to the top
+    .sort((a, b) => {
+        const aInd = selectedYears.indexOf(a.key);
+        const bInd = selectedYears.indexOf(b.key);
+        return aInd !== -1 && bInd !== -1
+          ? 0
+          : aInd !== -1
+            ? -1
+            : bInd !== -1
+              ? 1
+              : 0;
+      });
+    console.log(sortedDevYearList);
   }
   updateSortedData();
 </script>
