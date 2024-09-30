@@ -173,18 +173,38 @@
         </IconButton>
       </div>
       <div class="content-filters-row-divider" />
+      {#if selectedTags.length === 0}
       <Button
         title={"Toggle filter by tags section"}
         text={"Filter Tags"}
         isSelected={isFilterTagsExpanded}
         onClick={() => toggleFilterTags()}
       />
+      {/if}
+      {#if selectedTags.length > 0}
+      <Button
+        title={"Toggle filter by tags section"}
+        text={"Filter Tags" + " (" + selectedTags.length + ")"}
+        isSelected={isFilterTagsExpanded}
+        onClick={() => toggleFilterTags()}
+      />
+      {/if}
+      {#if selectedYears.length === 0}
       <Button
         title={"Toggle filter by years section"}
         text={"Filter Years"}
         isSelected={isFilterYearsExpanded}
         onClick={() => toggleFilterYears()}
       />
+      {/if}
+      {#if selectedYears.length > 0}
+      <Button
+        title={"Toggle filter by years section"}
+        text={"Filter Years" + " (" + selectedYears.length + ")"}
+        isSelected={isFilterYearsExpanded}
+        onClick={() => toggleFilterYears()}
+      />
+      {/if}
     </div>
     {#if isFilterTagsExpanded}
       <div class="content-filters-display-full">
