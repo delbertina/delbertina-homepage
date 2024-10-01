@@ -61,7 +61,8 @@
   function toggleTag(tag: string): void {
     const tagInd = selectedTags.indexOf(tag);
     if (tagInd === -1) {
-      selectedTags.push(tag);
+      // trigger re-calc instead of using push
+      selectedTags = [...selectedTags, tag];
     } else {
       selectedTags = selectedTags.filter((item) => item !== tag);
     }
@@ -71,7 +72,8 @@
   function toggleYear(year: string): void {
     const yearInd = selectedYears.indexOf(year);
     if (yearInd === -1) {
-      selectedYears.push(year);
+      // trigger re-calc instead of using push
+      selectedYears = [...selectedYears, year];
     } else {
       selectedYears = selectedYears.filter((item) => item !== year);
     }
@@ -173,38 +175,20 @@
         </IconButton>
       </div>
       <div class="content-filters-row-divider" />
-      {#if selectedTags.length === 0}
-        <Button
-          title={"Toggle filter by tags section"}
-          text={"Filter Tags"}
-          isSelected={isFilterTagsExpanded}
-          onClick={() => toggleFilterTags()}
-        />
-      {/if}
-      {#if selectedTags.length > 0}
-        <Button
-          title={"Toggle filter by tags section"}
-          text={"Filter Tags" + " (" + selectedTags.length + ")"}
-          isSelected={isFilterTagsExpanded}
-          onClick={() => toggleFilterTags()}
-        />
-      {/if}
-      {#if selectedYears.length === 0}
-        <Button
-          title={"Toggle filter by years section"}
-          text={"Filter Years"}
-          isSelected={isFilterYearsExpanded}
-          onClick={() => toggleFilterYears()}
-        />
-      {/if}
-      {#if selectedYears.length > 0}
-        <Button
-          title={"Toggle filter by years section"}
-          text={"Filter Years" + " (" + selectedYears.length + ")"}
-          isSelected={isFilterYearsExpanded}
-          onClick={() => toggleFilterYears()}
-        />
-      {/if}
+      <Button
+        title={"Toggle filter by tags section"}
+        text={"Filter Tags" +
+          (selectedTags.length > 0 ? " (" + selectedTags.length + ")" : "")}
+        isSelected={isFilterTagsExpanded}
+        onClick={() => toggleFilterTags()}
+      />
+      <Button
+        title={"Toggle filter by years section"}
+        text={"Filter Years" +
+          (selectedYears.length > 0 ? " (" + selectedYears.length + ")" : "")}
+        isSelected={isFilterYearsExpanded}
+        onClick={() => toggleFilterYears()}
+      />
     </div>
     {#if isFilterTagsExpanded}
       <div class="content-filters-display-full">
