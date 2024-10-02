@@ -35,6 +35,7 @@
     align-items: center;
     gap: 8px;
     text-wrap: nowrap;
+    text-transform: capitalize
   }
 
   button:active {

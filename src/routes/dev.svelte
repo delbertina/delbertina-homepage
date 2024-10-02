@@ -14,6 +14,7 @@
   import Subheader from "../lib/Subheader.svelte";
   import ImgCardList from "../lib/ImgCardList.svelte";
   import ChipSelect from "../lib/ChipSelect.svelte";
+  import FilterButton from "../lib/FilterButton.svelte";
 
   const headerText = "Software Development";
   const subheaderText =
@@ -175,7 +176,7 @@
         </IconButton>
       </div>
       <div class="content-filters-row-divider" />
-      <Button
+      <!-- <Button
         title={"Toggle filter by tags section"}
         text={"Filter Tags" +
           (selectedTags.length > 0 ? " (" + selectedTags.length + ")" : "")}
@@ -188,6 +189,18 @@
           (selectedYears.length > 0 ? " (" + selectedYears.length + ")" : "")}
         isSelected={isFilterYearsExpanded}
         onClick={() => toggleFilterYears()}
+      /> -->
+      <FilterButton 
+      itemText="tags"
+      itemLen={selectedTags.length}
+      isSelected={isFilterTagsExpanded}
+      onClick={() => toggleFilterTags()}
+      />
+      <FilterButton 
+      itemText="years"
+      itemLen={selectedYears.length}
+      isSelected={isFilterYearsExpanded}
+      onClick={() => toggleFilterYears()}
       />
     </div>
     {#if isFilterTagsExpanded}
