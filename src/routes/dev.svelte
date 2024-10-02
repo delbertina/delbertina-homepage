@@ -176,31 +176,17 @@
         </IconButton>
       </div>
       <div class="content-filters-row-divider" />
-      <!-- <Button
-        title={"Toggle filter by tags section"}
-        text={"Filter Tags" +
-          (selectedTags.length > 0 ? " (" + selectedTags.length + ")" : "")}
+      <FilterButton
+        itemText="tags"
+        itemLen={selectedTags.length}
         isSelected={isFilterTagsExpanded}
         onClick={() => toggleFilterTags()}
       />
-      <Button
-        title={"Toggle filter by years section"}
-        text={"Filter Years" +
-          (selectedYears.length > 0 ? " (" + selectedYears.length + ")" : "")}
+      <FilterButton
+        itemText="years"
+        itemLen={selectedYears.length}
         isSelected={isFilterYearsExpanded}
         onClick={() => toggleFilterYears()}
-      /> -->
-      <FilterButton 
-      itemText="tags"
-      itemLen={selectedTags.length}
-      isSelected={isFilterTagsExpanded}
-      onClick={() => toggleFilterTags()}
-      />
-      <FilterButton 
-      itemText="years"
-      itemLen={selectedYears.length}
-      isSelected={isFilterYearsExpanded}
-      onClick={() => toggleFilterYears()}
       />
     </div>
     {#if isFilterTagsExpanded}
